@@ -7,17 +7,17 @@ export async function POST(req: Request, res: Response) {
     try {
         const body = await req.json();
 
-        const { email, password } = signInValidator.parse(body);
+        const { username, password } = signInValidator.parse(body);
 
-        const emailExists = await db.user.findUnique({
-            where: { email }
+        const usernameExists = await db.user.findUnique({
+            where: { username }
         })
 
-        if (!emailExists) {
+        if (!usernameExists) {
             return new Response('User does not exist.', { status: 404 })
         }
 
-        const passwordMatch = await bcrypt.compare(password, emailExists.password);
+        const passwordMatch = await bcrypt.compare(password, usernameExists.password);
 
         if (!passwordMatch) {
             return new Response('Invalid password.', { status: 401 })

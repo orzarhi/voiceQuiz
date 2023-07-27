@@ -3,6 +3,7 @@ import { SignUpType } from "@/types/sign-up";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useToast } from "./use-toast";
+import { signIn } from 'next-auth/react';
 
 export const useSignUp = () => {
     const { toast } = useToast()
@@ -15,11 +16,16 @@ export const useSignUp = () => {
             const { data } = await axios.post('/api/sign-up', payload);
             return data;
         },
-        onSuccess: () => {
+        onSuccess: async (data) => {
             toast({
                 title: 'Registered successfully.',
                 description: 'You can now log in.',
             })
+            await signIn('credentials', {
+                username: 'orz',
+                password: '123456',
+                callbackUrl: '/',
+            });
         },
         onError: () => {
             console.log('error');
