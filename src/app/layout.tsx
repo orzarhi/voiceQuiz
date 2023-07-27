@@ -1,5 +1,8 @@
-import './globals.css'
+import { cn } from '@/lib/utils'
+import '@/styles/globals.css'
 import { Inter } from 'next/font/google'
+import { Toaster } from '@/components/ui/Toaster'
+import { Providers } from '@/components/Providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,8 +17,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={cn('bg-white text-slate-900 antialiased', inter.className)}>
+      <body className={inter.className}>
+        <Providers>
+          <main className='container h-full pt-12 mx-auto max-w-7xl'>
+            {children}
+          </main>
+        </Providers>
+        <Toaster />
+      </body>
     </html>
   )
 }
