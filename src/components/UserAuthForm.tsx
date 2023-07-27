@@ -1,4 +1,5 @@
 'use client'
+
 import React, { FC, useState } from 'react'
 import { Button } from './ui/Button'
 import { cn } from '@/lib/utils'
@@ -7,11 +8,15 @@ import { Icons } from './Icons'
 import { useToast } from '@/hooks/use-toast'
 
 
-interface UserAuthFormProps extends React.HtmlHTMLAttributes<HTMLDivElement> { }
+interface UserAuthFormProps extends React.HtmlHTMLAttributes<HTMLDivElement> {
+    title: string
+}
 
-export const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => {
+export const UserAuthForm: FC<UserAuthFormProps> = ({ className, title, ...props }) => {
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const { toast } = useToast()
+
+    const icon = title === 'Google' ? <Icons.google className='w-4 h-4 mr-2' /> : <Icons.gitHub className='w-4 h-4 mr-2' />
 
     const loginWithGoogle = async () => {
         setIsLoading(true)
@@ -20,7 +25,7 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => 
             toast({
                 title: 'There was a problem',
                 description: "There was an error logging in with google",
-                variant: 'destructive'
+                variant: 'default'
             })
         } catch (error) {
         } finally {
@@ -33,11 +38,10 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, ...props }) => 
             <Button
                 onClick={loginWithGoogle}
                 isLoading={isLoading}
-                //@ts-ignore
                 size='sm'
-                className='w-full'>
-                {isLoading ? null : <Icons.google className='w-4 h-4 mr-2' />}
-                Google
+                className='w-full' variant='outline'>
+                {isLoading ? null : icon}
+                {title}
             </Button>
         </div>
     )

@@ -7,7 +7,8 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
 
-        const { name, email, password } = signUpValidator.parse(body);
+
+        const { username, email, password } = signUpValidator.parse(body);
 
         const emailExists = await db.user.findUnique({
             where: { email }
@@ -17,12 +18,20 @@ export async function POST(req: Request) {
             return new Response('User with this email already exists', { status: 409 })
         }
 
+        const usernameExists = await db.user.findUnique({
+            where: { username }
+        })
+
+        if (usernameExists) {
+            return new Response('User with this username already exists', { status: 409 })
+        }
+
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
 
         await db.user.create({
             data: {
-                name,
+                username,
                 email,
                 password: passwordHash
             }
