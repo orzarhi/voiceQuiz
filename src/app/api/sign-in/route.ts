@@ -2,6 +2,7 @@ import { db } from "@/lib/db";
 import { signInValidator } from "@/lib/validators/signIn";
 import { z } from "zod";
 import bcrypt from "bcrypt";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request, res: Response) {
     try {
@@ -22,9 +23,9 @@ export async function POST(req: Request, res: Response) {
         if (!passwordMatch) {
             return new Response('Invalid password.', { status: 401 })
         }
+        const user = { username, password }
 
-
-        return new Response('OK');
+        return NextResponse.json(user, { status: 200 })
     } catch (error) {
         if (error instanceof z.ZodError) {
             return new Response('Invalid request data passed', { status: 422 })

@@ -39,13 +39,12 @@ export const authOptions: NextAuthOptions = {
                 token.accessToken = account.access_token;
                 token.id = user.id;
                 token.username = (user as User).username;
-                console.log({ user });
             }
             return token;
         },
     },
     pages: {
-        signIn: '/auth',
+        signIn: '/sign-in',
     },
     session: {
         strategy: 'jwt',
