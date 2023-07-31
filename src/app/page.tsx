@@ -8,13 +8,15 @@ export default async function Home() {
   const session = await getAuthSession();
 
   return (
-    <>
+    <main className='flex justify-end'>
       {session?.user ?
-        <UserAccountNav user={session.user} />
+        <div className=''>
+          <UserAccountNav user={session.user} />
+        </div>
         :
         <Link href="sign-in" className={buttonVariants()}>Sign in</Link>
       }
-
-    </>)
+    </main>
+  )
 
 }

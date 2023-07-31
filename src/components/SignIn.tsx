@@ -67,7 +67,7 @@ export const SignIn = ({ }) => {
                 <CardContent className="grid gap-4">
                     <div className="grid grid-cols-2 gap-6">
                         <UserAuthForm title='Google' />
-                        <UserAuthForm title='gitHub' />
+                        <UserAuthForm title='Github' />
                     </div>
                     <div className="relative">
                         <div className="absolute inset-0 flex items-center">

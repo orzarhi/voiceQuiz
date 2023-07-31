@@ -21,7 +21,10 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, title, ...props
     const loginWithGoogle = async () => {
         setIsLoading(true)
         try {
-            await signIn('google', { callbackUrl: '/' })
+            if (title === 'Google') {
+                return await signIn('google', { callbackUrl: '/' })
+            }
+            return await signIn('github', { callbackUrl: '/' })
         } catch (error) {
             toast({
                 title: 'There was a problem',
