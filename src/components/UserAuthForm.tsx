@@ -26,7 +26,7 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, title, ...props
             toast({
                 title: 'There was a problem',
                 description: "There was an error logging in with google",
-                variant: 'default'
+                variant: 'destructive'
             })
         } finally {
             setIsLoading(false)
