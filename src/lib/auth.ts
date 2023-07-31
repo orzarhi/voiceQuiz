@@ -4,10 +4,14 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import { signInValidator } from './validators/signIn';
 import { db } from './db';
 import { User } from '@prisma/client';
-
+import GoogleProvider from "next-auth/providers/google";
 
 export const authOptions: NextAuthOptions = {
     providers: [
+        GoogleProvider({
+            clientId: process.env.GOOGLE_CLIENT_ID!,
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        }),
         CredentialsProvider({
             credentials: {
                 username: { type: 'text', placeholder: 'test@test.com' },
@@ -18,11 +22,11 @@ export const authOptions: NextAuthOptions = {
                 const user = await db.user.findUnique({
                     where: { username },
                 });
-                if (!user) return null;
+                if (!user) throw new Error('Invalid username or password.');;
 
                 const isPasswordValid = await bcrypt.compare(password, user.password);
 
-                if (!isPasswordValid) return null;
+                if (!isPasswordValid) throw new Error('Invalid username or password.');
 
                 return user;
             },
@@ -30,9 +34,15 @@ export const authOptions: NextAuthOptions = {
     ],
     callbacks: {
         session({ session, token }) {
-            session.user.id = token.id;
-            session.user.username = token.username;
+            if (token) {
+                session.user.id = token?.id;
+                session.user.name = token?.name;
+                session.user.email = token?.email;
+                session.user.image = token?.picture;
+                session.user.username = token?.username;
+            }
             return session;
+
         },
         jwt({ token, account, user }) {
             if (account) {
@@ -41,6 +51,9 @@ export const authOptions: NextAuthOptions = {
                 token.username = (user as User).username;
             }
             return token;
+        },
+        redirect() {
+            return "/"
         },
     },
     pages: {

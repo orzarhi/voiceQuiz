@@ -7,7 +7,6 @@ export async function POST(req: Request) {
     try {
         const body = await req.json();
 
-
         const { username, email, password } = signUpValidator.parse(body);
 
         const emailExists = await db.user.findUnique({

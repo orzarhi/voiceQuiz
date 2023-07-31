@@ -4,30 +4,46 @@ import { useToast } from '@/hooks/use-toast'
 import { SignInRequest, signInValidator } from '@/lib/validators/signIn'
 import { SignInType } from '@/types/sign-in'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { signIn } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { UserAuthForm } from './UserAuthForm'
 import { Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle, Input, Label } from './ui'
-import { useSignIn } from '@/hooks/use-auth'
 
 export const SignIn = ({ }) => {
     const { toast } = useToast()
+    const router = useRouter()
+
+    const [isLoading, setIsLoading] = useState<boolean>(false)
 
     const { handleSubmit, register, formState: { errors } } = useForm<SignInRequest>({
         resolver: zodResolver(signInValidator)
     })
 
-    const { mutate: signIn, isLoading } = useSignIn()
 
-    const onSubmit = (data: SignInType) => {
+    const onSubmit = async (data: SignInType) => {
+        setIsLoading(true)
         try {
-            signIn(data)
+            const res = await signIn('credentials', {
+                username: data.username,
+                password: data.password,
+            })
+            if (res?.error) {
+                return toast({
+                    title: res.error,
+                    variant: 'destructive'
+                })
+            }
+
         } catch (error) {
             toast({
                 title: 'Something went wrong 🤨',
                 description: 'please try again later.',
-                variant: 'destructive'
             })
+        } finally {
+            setIsLoading(false)
         }
     }
 

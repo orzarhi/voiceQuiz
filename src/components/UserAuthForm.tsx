@@ -21,13 +21,13 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, title, ...props
     const loginWithGoogle = async () => {
         setIsLoading(true)
         try {
-            // await signIn('google')
+            await signIn('google')
+        } catch (error) {
             toast({
                 title: 'There was a problem',
                 description: "There was an error logging in with google",
                 variant: 'default'
             })
-        } catch (error) {
         } finally {
             setIsLoading(false)
         }
