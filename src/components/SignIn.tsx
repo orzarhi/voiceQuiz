@@ -2,20 +2,22 @@
 
 import { useToast } from '@/hooks/use-toast'
 import { SignInRequest, signInValidator } from '@/lib/validators/signIn'
-import { SignInType } from '@/types/sign-in'
+import { SignInType } from '@/types/user-credentials'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { signIn } from 'next-auth/react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { UserAuthForm } from './UserAuthForm'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Button } from './ui/Button'
-import { Label } from './ui/Label'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
+import { Label } from './ui/Label'
 
 export const SignIn = ({ }) => {
     const { toast } = useToast()
+    const router = useRouter()
 
     const [isLoading, setIsLoading] = useState<boolean>(false)
 
@@ -26,17 +28,19 @@ export const SignIn = ({ }) => {
     const onSubmit = async (data: SignInType) => {
         setIsLoading(true)
         try {
-            const res = await signIn('credentials', {
+            const status = await signIn('credentials', {
                 username: data.username,
                 password: data.password,
+                redirect: false,
+                callbackUrl: '/'
             })
-            if (res?.error) {
+            if (status?.error) {
                 return toast({
-                    title: res.error,
+                    title: status.error,
                     variant: 'destructive'
                 })
             }
-
+            router.push(status?.url || '/')
         } catch (error) {
             toast({
                 title: 'Something went wrong',

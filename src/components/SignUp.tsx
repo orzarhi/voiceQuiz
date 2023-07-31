@@ -3,14 +3,14 @@
 import { useSignUp } from '@/hooks/use-auth'
 import { useToast } from '@/hooks/use-toast'
 import { SignUpRequest, signUpValidator } from '@/lib/validators/signUp'
-import { SignUpType } from '@/types/sign-up'
+import { SignUpType } from '@/types/user-credentials'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Link from "next/link"
 import { useForm } from 'react-hook-form'
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Button } from './ui/Button'
-import { Label } from './ui/Label'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
+import { Label } from './ui/Label'
 
 export const SignUp = ({ }) => {
     const { toast } = useToast()

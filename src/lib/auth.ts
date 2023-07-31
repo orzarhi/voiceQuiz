@@ -52,9 +52,6 @@ export const authOptions: NextAuthOptions = {
             }
             return token;
         },
-        redirect() {
-            return "/"
-        },
     },
     pages: {
         signIn: '/sign-in',
