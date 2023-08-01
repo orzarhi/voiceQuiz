@@ -9,19 +9,27 @@ export async function POST(req: Request) {
 
         const { name, username, email, password } = signUpValidator.parse(body);
 
-        const user = await db.user.findUnique({
+        const emailExists = await db.user.findUnique({
             where: { email }
         })
 
-        if (user?.email === email) {
+        if (emailExists) {
             return new Response('User with this email already exists.', { status: 409 })
         }
 
-        if (user?.name === name) {
+        const nameExists = await db.user.findUnique({
+            where: { name }
+        })
+
+        if (nameExists) {
             return new Response('User with this name already exists.', { status: 409 })
         }
 
-        if (user?.username === username) {
+        const usernameExists = await db.user.findUnique({
+            where: { username }
+        })
+
+        if (usernameExists) {
             return new Response('User with this username already exists.', { status: 409 })
         }
 
@@ -39,6 +47,7 @@ export async function POST(req: Request) {
 
         return new Response('OK');
     } catch (error) {
+        console.log("🚀error:", error)
         if (error instanceof z.ZodError) {
             return new Response('Invalid request data passed.', { status: 422 })
         }
