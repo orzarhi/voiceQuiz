@@ -83,3 +83,7 @@
 .drop-down-menu{
 	@apply cursor-pointer hover:bg-zinc-300
 }
+
+h1 {
+	font-family: var(--font-roboto-mono);
+  }

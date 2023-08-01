@@ -14,6 +14,8 @@ import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
+import Image from 'next/image'
+import voiceQuiz from "@/images/voice-quiz.png"
 
 export const SignIn = ({ }) => {
     const { toast } = useToast()
@@ -52,12 +54,15 @@ export const SignIn = ({ }) => {
         }
     }
 
+
+
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container shadow-2xl p-3'>
-                <Link href='/sign-up' className='float-right'>
-                    <Button className=' w-44' variant='subtle'>Create account</Button>
-                </Link>
+                <div className='flex justify-between -mb-8'>
+                    <Button className='w-44' onClick={() => router.push('/sign-up')} variant='subtle'>Create account</Button>
+                    <Image src={voiceQuiz} className='w-36' alt='voice quiz' />
+                </div>
                 <CardHeader className="space-y-1">
                     <CardTitle className=" text-2xl"> Let&lsquo;s begin.</CardTitle>
                     <CardDescription>

@@ -11,9 +11,13 @@ import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
+import voiceQuiz from "@/images/voice-quiz.png"
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 export const SignUp = ({ }) => {
     const { toast } = useToast()
+    const router = useRouter()
 
     const { handleSubmit, register, formState: { errors } } = useForm<SignUpRequest>({
         resolver: zodResolver(signUpValidator)
@@ -36,11 +40,13 @@ export const SignUp = ({ }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container shadow-2xl p-3'>
-                <Link href='/sign-in' className='float-right'>
-                    <Button className='w-44' variant='subtle'>Sign in</Button>
-                </Link>
+                <div className='flex justify-between -mb-8'>
+                    <Button className='w-44' onClick={() => router.push('/sign-in')} variant='subtle'>Sign in</Button>
+                    <Image src={voiceQuiz} className='w-36' alt='voice quiz' />
+                </div>
                 <CardHeader className="space-y-1">
-                    <CardTitle className=" text-2xl">Create an account</CardTitle>
+                    <CardTitle className=" text-2xl">Create an account
+                    </CardTitle>
                     <CardDescription>
                         Enter your email below to create your account.
                     </CardDescription>
