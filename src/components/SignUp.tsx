@@ -46,6 +46,17 @@ export const SignUp = ({ }) => {
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-4">
+
+                    <div className="grid gap-2">
+                        <Label htmlFor="name">Full Name</Label>
+                        <Input id="name" type="text"  {...register('name')} />
+                        {errors?.name && (
+                            <p className='px-1 text-xs text-red-600'>
+                                {errors.name.message}
+                            </p>
+                        )}
+                    </div>
+
                     <div className="grid gap-2">
                         <Label htmlFor="username">Username</Label>
                         <Input id="username" type="text"  {...register('username')} />

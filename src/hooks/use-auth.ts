@@ -4,6 +4,7 @@ import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { useRouter } from 'next/navigation';
 import { useToast } from "./use-toast";
+import { ErrorType } from "@/types/error";
 
 export const useSignUp = () => {
     const { toast } = useToast()
@@ -11,8 +12,8 @@ export const useSignUp = () => {
 
     return useMutation({
         mutationFn: async (inputs: SignUpType) => {
-            const { username, email, password } = inputs;
-            const payload: SignUpPayload = { username, email: email, password }
+            const { name, username, email, password } = inputs;
+            const payload: SignUpPayload = { name, username, email, password }
 
             const { data } = await axios.post('/api/sign-up', payload);
             return data;
@@ -24,8 +25,11 @@ export const useSignUp = () => {
             })
             router.push('/sign-in')
         },
-        onError: () => {
-            console.log('error');
+        onError: (error: ErrorType) => {
+            return toast({
+                title: error?.response.data || 'Something went wrong.',
+                variant: 'destructive'
+            })
         }
     });
 }
