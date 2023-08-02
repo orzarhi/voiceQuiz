@@ -11,10 +11,10 @@ export default async function Home() {
 
   return (
     <>
-      <main className='flex justify-between bg-zinc-200 rounded-2xl'>
-        <Image src={logo} className='w-14' alt='voice quiz' />
+      <main className='flex justify-between bg-zinc-300/90 p-0.5 rounded-2xl'>
+        <Image src={logo} className='not-drag w-14' alt='voice quiz' />
         <div className='mx-auto my-auto'>
-          <h1 className='uppercase font-bold text-2xl bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-teal-600'>welcome to vice quiz</h1>
+          <h1 className='text-2xl font-bold text-transparent uppercase bg-clip-text bg-gradient-to-r from-purple-500 to-teal-600'>welcome to vice quiz</h1>
         </div>
         {session?.user ?
           <UserAccountNav user={session.user} />
@@ -22,9 +22,7 @@ export default async function Home() {
           <Link href="sign-in" className={buttonVariants()}>Sign in</Link>
         }
       </main>
-      <div>
-        <GameCard />
-      </div>
+      <GameCard />
     </>
   )
 

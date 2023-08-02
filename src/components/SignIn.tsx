@@ -15,7 +15,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
 import Image from 'next/image'
-import voiceQuiz from "@/images/voice-quiz.png"
+import logo from "@/images/logo.png"
 
 export const SignIn = ({ }) => {
     const { toast } = useToast()
@@ -58,13 +58,13 @@ export const SignIn = ({ }) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
-            <Card className='container shadow-2xl p-3'>
+            <Card className='container p-3 shadow-2xl'>
                 <div className='flex justify-between -mb-8'>
                     <Button className='w-44' onClick={() => router.push('/sign-up')} variant='subtle'>Create account</Button>
-                    <Image src={voiceQuiz} className='w-36' alt='voice quiz' />
+                    <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
-                    <CardTitle className=" text-2xl"> Let&lsquo;s begin.</CardTitle>
+                    <CardTitle className="text-2xl "> Let&lsquo;s begin.</CardTitle>
                     <CardDescription>
                         Log in to an existing account.
                     </CardDescription>
@@ -79,7 +79,7 @@ export const SignIn = ({ }) => {
                             <span className="w-full border-t" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="bg-background px-2 text-muted-foreground">
+                            <span className="px-2 bg-background text-muted-foreground">
                                 Or continue with
                             </span>
                         </div>

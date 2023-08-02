@@ -11,7 +11,7 @@ import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
-import voiceQuiz from "@/images/voice-quiz.png"
+import logo from "@/images/logo.png"
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 
@@ -39,13 +39,13 @@ export const SignUp = ({ }) => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
-            <Card className='container shadow-2xl p-3'>
+            <Card className='container p-3 shadow-2xl'>
                 <div className='flex justify-between -mb-8'>
                     <Button className='w-44' onClick={() => router.push('/sign-in')} variant='subtle'>Sign in</Button>
-                    <Image src={voiceQuiz} className='w-36' alt='voice quiz' />
+                    <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
-                    <CardTitle className=" text-2xl">Create an account
+                    <CardTitle className="text-2xl ">Create an account
                     </CardTitle>
                     <CardDescription>
                         Enter your email below to create your account.
