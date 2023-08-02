@@ -36,7 +36,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             {user?.email && <p className='w-[200px] truncate text-sm text-zinc-700'>{user.email}</p>}
           </div>
         </div>
-        <DropdownMenuSeparator />
+        {/* <DropdownMenuSeparator />
 
         <DropdownMenuItem asChild className="drop-down-menu">
           <Link href='/'>Feed</Link>
@@ -44,7 +44,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
 
         <DropdownMenuItem asChild className="drop-down-menu">
           <Link href='/'>Settings</Link>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
         <DropdownMenuSeparator />
 
         <DropdownMenuItem

@@ -25,7 +25,7 @@ export const UserAvatar: FC<UserAvatarProps> = ({ user, ...props }) => {
                 :
                 <AvatarFallback>
                     <span className='sr-only'>{user?.name}</span>
-                    <Icons.user className="w-8 h-8" />
+                    <Icons.user className="w-9 h-9" />
                 </AvatarFallback>
             }
         </Avatar>

@@ -18,10 +18,7 @@ export const authOptions: NextAuthOptions = {
             clientSecret: process.env.GITHUB_CLIENT_SECRET!
         }),
         CredentialsProvider({
-            credentials: {
-                username: { type: 'text', placeholder: 'test@test.com' },
-                password: { type: 'password', placeholder: 'Pa$$w0rd' },
-            },
+            credentials: {},
             async authorize(credentials, req) {
                 const { username, password } = signInValidator.parse(credentials);
                 const user = await db.user.findUnique({
