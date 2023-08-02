@@ -64,7 +64,7 @@ export const SignIn = ({ }) => {
                     <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
-                    <CardTitle className="text-2xl "> Let&lsquo;s begin.</CardTitle>
+                    <CardTitle className="text-2xl ">Let&lsquo;s begin.</CardTitle>
                     <CardDescription>
                         Log in to an existing account.
                     </CardDescription>
@@ -79,7 +79,7 @@ export const SignIn = ({ }) => {
                             <span className="w-full border-t" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="px-2 bg-background text-muted-foreground">
+                            <span className="px-2 bg-zinc-50 rounded-xl">
                                 Or continue with
                             </span>
                         </div>
