@@ -47,7 +47,7 @@ export const SignUp = ({ }) => {
                     <CardTitle className="text-2xl ">Create an account
                     </CardTitle>
                     <CardDescription>
-                        Enter your email below to create your account.
+                        Enter your details below to create your account.
                     </CardDescription>
                 </CardHeader>
                 <CardContent className="grid gap-4">
