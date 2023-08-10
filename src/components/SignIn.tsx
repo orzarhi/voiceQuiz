@@ -60,7 +60,7 @@ export const SignIn = ({ }) => {
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container p-3 shadow-2xl'>
                 <div className='flex justify-between -mb-8'>
-                    <Button className='w-44' onClick={() => router.push('/sign-up')} variant='subtle'>Create account</Button>
+                    <Button className='w-44' type='button' onClick={() => router.push('/sign-up')} variant='subtle'>Create account</Button>
                     <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
@@ -104,7 +104,7 @@ export const SignIn = ({ }) => {
                     </div>
                 </CardContent>
                 <CardFooter>
-                    <Button isLoading={isLoading} className="w-full">Sign in</Button>
+                    <Button isLoading={isLoading} type='submit' className="w-full">Sign in</Button>
                 </CardFooter>
             </Card>
         </form>
