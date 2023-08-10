@@ -40,8 +40,7 @@ export const SignUp = ({ }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container p-3 shadow-2xl'>
-                <div className='flex justify-between -mb-8'>
-                    <Button type='button' className='w-44' onClick={() => router.push('/sign-in')} variant='subtle'>Sign in</Button>
+                <div className='flex justify-end -mb-8'>
                     <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
@@ -94,7 +93,9 @@ export const SignUp = ({ }) => {
                 <CardFooter>
                     <Button isLoading={isLoading} type='submit' className="w-full">Create account</Button>
                 </CardFooter>
-
+                <div className='flex justify-start text-sm'>
+                    <span className='flex w-full ml-2'>Do you an account? <p className='ml-2 cursor-pointer underline text-sky-500' onClick={() => router.push('/sign-in')}>Sign in</p></span>
+                </div>
             </Card>
         </form>
     )
