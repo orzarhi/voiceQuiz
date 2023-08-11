@@ -17,7 +17,8 @@ export const GameCard = ({ }) => {
     });
 
     const handleAnswerClick = async (isCorrect: boolean) => {
-        setGame({ ...game, changeBackground: !game.changeBackground })
+        setGame({ ...game, changeBackground: true })
+
         await delay(1000);
         if (isCorrect) {
             setGame({ ...game, score: game.score++ })
@@ -25,8 +26,11 @@ export const GameCard = ({ }) => {
         const nextQuestion = game.currentQuestion + 1;
 
         if (nextQuestion < Questions.length) {
-            setGame({ ...game, changeBackground: !game.changeBackground })
-            setGame({ ...game, currentQuestion: nextQuestion })
+            setGame({
+                ...game,
+                changeBackground: false,
+                currentQuestion: nextQuestion
+            })
 
         } else setGame({ ...game, endGame: true })
 
