@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" className={cn('bg-white text-slate-900 antialiased', inter.className)}>
       <body className={inter.className}>
         <Providers>
-          <main className='container h-full pt-8 mx-auto max-w-5xl'>
+          <main className='container h-full px-1.5 pt-8 mx-auto max-w-5xl'>
             {children}
           </main>
         </Providers>
