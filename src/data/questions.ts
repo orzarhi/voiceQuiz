@@ -218,7 +218,7 @@ export const Questions = [
     {
         questionText: "Catch",
         answerOptions: [
-            { answerText: "Caught", isCorrect: false },
+            { answerText: "Catch", isCorrect: false },
             { answerText: "Catching", isCorrect: false },
             { answerText: "Caught", isCorrect: true },
             { answerText: "Catches", isCorrect: false },

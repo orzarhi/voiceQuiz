@@ -32,7 +32,7 @@ export const GameCard = ({ }) => {
                 currentQuestion: nextQuestion
             })
 
-        } else setGame({ ...game, endGame: true })
+        } else setGame({ ...game, endGame: true, })
 
     };
 
@@ -76,7 +76,7 @@ export const GameCard = ({ }) => {
             ) : (
                 <div className='flex flex-col justify-center items-center h-[60vh] space-y-5 p-10'>
                     <h2 className='text-xl'>You scored {game.score} out of {Questions.length}.</h2>
-                    <Button className='w-full' onClick={handleNewGame}>New Game</Button>
+                    <Button className='w-full md:w-2/5' onClick={handleNewGame}>New Game</Button>
                 </div>
             )}
         </>
