@@ -1,200 +1,227 @@
 export const Questions = [
     {
-        questionText: "Was/Were",
+        questionText: "Eat",
         answerOptions: [
-            { answerText: "היה/הייתה", isCorrect: true },
-            { answerText: "הם/הן", isCorrect: false },
-            { answerText: "היה/היה", isCorrect: false },
-            { answerText: "אני", isCorrect: false },
+            { answerText: "Eaten", isCorrect: false },
+            { answerText: "Eating", isCorrect: false },
+            { answerText: "Ate", isCorrect: true },
+            { answerText: "Eats", isCorrect: false },
         ],
     },
     {
-        questionText: "Had",
+        questionText: "Drive",
         answerOptions: [
-            { answerText: "יש לי", isCorrect: false },
-            { answerText: "היה לי", isCorrect: true },
-            { answerText: "לשמור", isCorrect: false },
-            { answerText: "היה", isCorrect: false },
+            { answerText: "Driven", isCorrect: false },
+            { answerText: "Drove", isCorrect: true },
+            { answerText: "Driving", isCorrect: false },
+            { answerText: "Drives", isCorrect: false },
         ],
     },
     {
-        questionText: "Did",
+        questionText: "Write",
         answerOptions: [
-            { answerText: "עושה", isCorrect: false },
-            { answerText: "לעשות", isCorrect: false },
-            { answerText: "עשיתי", isCorrect: true },
-            { answerText: "לעשותי", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Said",
-        answerOptions: [
-            { answerText: "אמר", isCorrect: false },
-            { answerText: "לומר", isCorrect: false },
-            { answerText: "אמרתי", isCorrect: true },
-            { answerText: "אמור", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Got",
-        answerOptions: [
-            { answerText: "קיבל", isCorrect: true },
-            { answerText: "מקבל", isCorrect: false },
-            { answerText: "לקבל", isCorrect: false },
-            { answerText: "מקובל", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Made",
-        answerOptions: [
-            { answerText: "כותב", isCorrect: false },
-            { answerText: "עושה", isCorrect: true },
-            { answerText: "לעשות", isCorrect: false },
-            { answerText: "הכין", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Went",
-        answerOptions: [
-            { answerText: "הלך", isCorrect: false },
-            { answerText: "לך", isCorrect: false },
-            { answerText: "הולך", isCorrect: true },
-            { answerText: "להלך", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Saw",
-        answerOptions: [
-            { answerText: "רואה", isCorrect: false },
-            { answerText: "לראות", isCorrect: false },
-            { answerText: "ראיתי", isCorrect: true },
-            { answerText: "רואים", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Came",
-        answerOptions: [
-            { answerText: "לבוא", isCorrect: true },
-            { answerText: "בא", isCorrect: false },
-            { answerText: "הגיע", isCorrect: false },
-            { answerText: "להגיע", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Took",
-        answerOptions: [
-            { answerText: "לקחת", isCorrect: true },
-            { answerText: "לקח", isCorrect: false },
-            { answerText: "לקחו", isCorrect: false },
-            { answerText: "לקחה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Gave",
-        answerOptions: [
-            { answerText: "לתת", isCorrect: true },
-            { answerText: "נותן", isCorrect: false },
-            { answerText: "נתתי", isCorrect: false },
-            { answerText: "ניתן", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Knew",
-        answerOptions: [
-            { answerText: "להכיר", isCorrect: false },
-            { answerText: "יודע", isCorrect: false },
-            { answerText: "יודעת", isCorrect: false },
-            { answerText: "ידע", isCorrect: true },
-        ],
-    },
-    {
-        questionText: "Ate",
-        answerOptions: [
-            { answerText: "אוכל", isCorrect: false },
-            { answerText: "לאכול", isCorrect: false },
-            { answerText: "אכלתי", isCorrect: true },
-            { answerText: "לאכולי", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Drove",
-        answerOptions: [
-            { answerText: "נוהג", isCorrect: false },
-            { answerText: "לנהוג", isCorrect: false },
-            { answerText: "נהגתי", isCorrect: true },
-            { answerText: "נהגת", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Wrote",
-        answerOptions: [
-            { answerText: "כותב", isCorrect: false },
-            { answerText: "לכתוב", isCorrect: false },
-            { answerText: "כתבתי", isCorrect: true },
-            { answerText: "כתב", isCorrect: false },
+            { answerText: "Written", isCorrect: false },
+            { answerText: "Writing", isCorrect: false },
+            { answerText: "Wrote", isCorrect: true },
+            { answerText: "Writes", isCorrect: false },
         ],
     },
     {
         questionText: "Read",
         answerOptions: [
-            { answerText: "קורא", isCorrect: false },
-            { answerText: "לקרוא", isCorrect: false },
-            { answerText: "קראתי", isCorrect: true },
-            { answerText: "קרא", isCorrect: false },
+            { answerText: "Read", isCorrect: false },
+            { answerText: "Read", isCorrect: true },
+            { answerText: "Reading", isCorrect: false },
+            { answerText: "Reads", isCorrect: false },
         ],
     },
     {
-        questionText: "Slept",
+        questionText: "Sleep",
         answerOptions: [
-            { answerText: "ישן", isCorrect: false },
-            { answerText: "לישון", isCorrect: false },
-            { answerText: "ישנתי", isCorrect: true },
-            { answerText: "ישנה", isCorrect: false },
+            { answerText: "Slept", isCorrect: false },
+            { answerText: "Sleeping", isCorrect: false },
+            { answerText: "Sleeps", isCorrect: false },
+            { answerText: "Slept", isCorrect: true },
         ],
     },
     {
-        questionText: "Bought",
+        questionText: "Buy",
         answerOptions: [
-            { answerText: "קונה", isCorrect: false },
-            { answerText: "לקנות", isCorrect: false },
-            { answerText: "קניתי", isCorrect: true },
-            { answerText: "קנה", isCorrect: false },
+            { answerText: "Bought", isCorrect: false },
+            { answerText: "Buying", isCorrect: false },
+            { answerText: "Bought", isCorrect: true },
+            { answerText: "Buys", isCorrect: false },
         ],
     },
     {
-        questionText: "Sang",
+        questionText: "Sing",
         answerOptions: [
-            { answerText: "שר", isCorrect: false },
-            { answerText: "לשיר", isCorrect: false },
-            { answerText: "שרתי", isCorrect: true },
-            { answerText: "שירה", isCorrect: false },
+            { answerText: "Sung", isCorrect: false },
+            { answerText: "Singing", isCorrect: false },
+            { answerText: "Sings", isCorrect: false },
+            { answerText: "Sang", isCorrect: true },
         ],
     },
     {
-        questionText: "Danced",
+        questionText: "Dance",
         answerOptions: [
-            { answerText: "רוקד", isCorrect: false },
-            { answerText: "לרקוד", isCorrect: false },
-            { answerText: "רקדתי", isCorrect: true },
-            { answerText: "ריקוד", isCorrect: false },
+            { answerText: "Danced", isCorrect: false },
+            { answerText: "Dancing", isCorrect: false },
+            { answerText: "Danced", isCorrect: true },
+            { answerText: "Dances", isCorrect: false },
         ],
     },
     {
-        questionText: "Saw",
+        questionText: "See",
         answerOptions: [
-            { answerText: "רואה", isCorrect: false },
-            { answerText: "לראות", isCorrect: false },
-            { answerText: "ראיתי", isCorrect: true },
-            { answerText: "רואים", isCorrect: false },
+            { answerText: "Seen", isCorrect: false },
+            { answerText: "Seeing", isCorrect: false },
+            { answerText: "Sees", isCorrect: false },
+            { answerText: "Saw", isCorrect: true },
         ],
     },
     {
-        questionText: "Played",
+        questionText: "Play",
         answerOptions: [
-            { answerText: "משחק", isCorrect: false },
-            { answerText: "לשחק", isCorrect: false },
-            { answerText: "שיחקתי", isCorrect: true },
-            { answerText: "משחקה", isCorrect: false },
+            { answerText: "Played", isCorrect: true },
+            { answerText: "Played", isCorrect: false },
+            { answerText: "Playing", isCorrect: false },
+            { answerText: "Plays", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Talk",
+        answerOptions: [
+            { answerText: "Talked", isCorrect: false },
+            { answerText: "Talked", isCorrect: true },
+            { answerText: "Talking", isCorrect: false },
+            { answerText: "Talks", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Run",
+        answerOptions: [
+            { answerText: "Run", isCorrect: false },
+            { answerText: "Running", isCorrect: false },
+            { answerText: "Ran", isCorrect: true },
+            { answerText: "Runs", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Take",
+        answerOptions: [
+            { answerText: "Taken", isCorrect: false },
+            { answerText: "Taking", isCorrect: false },
+            { answerText: "Took", isCorrect: true },
+            { answerText: "Takes", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Give",
+        answerOptions: [
+            { answerText: "Given", isCorrect: false },
+            { answerText: "Giving", isCorrect: false },
+            { answerText: "Gave", isCorrect: true },
+            { answerText: "Gives", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Fly",
+        answerOptions: [
+            { answerText: "Flown", isCorrect: false },
+            { answerText: "Flying", isCorrect: false },
+            { answerText: "Flew", isCorrect: true },
+            { answerText: "Flies", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Break",
+        answerOptions: [
+            { answerText: "Broke", isCorrect: true },
+            { answerText: "Broken", isCorrect: false },
+            { answerText: "Breaking", isCorrect: false },
+            { answerText: "Breaks", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "See",
+        answerOptions: [
+            { answerText: "Seen", isCorrect: false },
+            { answerText: "Seeing", isCorrect: false },
+            { answerText: "Sees", isCorrect: false },
+            { answerText: "Saw", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Swim",
+        answerOptions: [
+            { answerText: "Swum", isCorrect: false },
+            { answerText: "Swimming", isCorrect: false },
+            { answerText: "Swam", isCorrect: true },
+            { answerText: "Swims", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Drink",
+        answerOptions: [
+            { answerText: "Drank", isCorrect: true },
+            { answerText: "Drunk", isCorrect: false },
+            { answerText: "Drinking", isCorrect: false },
+            { answerText: "Drinks", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Think",
+        answerOptions: [
+            { answerText: "Thought", isCorrect: false },
+            { answerText: "Thought", isCorrect: true },
+            { answerText: "Thinking", isCorrect: false },
+            { answerText: "Thinks", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Know",
+        answerOptions: [
+            { answerText: "Known", isCorrect: false },
+            { answerText: "Knew", isCorrect: true },
+            { answerText: "Knowing", isCorrect: false },
+            { answerText: "Knows", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Choose",
+        answerOptions: [
+            { answerText: "Chosen", isCorrect: false },
+            { answerText: "Choosing", isCorrect: false },
+            { answerText: "Chose", isCorrect: true },
+            { answerText: "Chooses", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Write",
+        answerOptions: [
+            { answerText: "Written", isCorrect: false },
+            { answerText: "Writing", isCorrect: false },
+            { answerText: "Wrote", isCorrect: true },
+            { answerText: "Writes", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Build",
+        answerOptions: [
+            { answerText: "Built", isCorrect: true },
+            { answerText: "Built", isCorrect: false },
+            { answerText: "Building", isCorrect: false },
+            { answerText: "Builds", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Catch",
+        answerOptions: [
+            { answerText: "Caught", isCorrect: false },
+            { answerText: "Catching", isCorrect: false },
+            { answerText: "Caught", isCorrect: true },
+            { answerText: "Catches", isCorrect: false },
         ],
     },
 ];
