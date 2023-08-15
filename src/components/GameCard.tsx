@@ -54,7 +54,7 @@ export const GameCard = ({ }) => {
                             {Questions[game.currentQuestion].questionText} 🔊
                         </CardTitle>
                         <CardDescription className='text-base'>
-                            Please choose the correct answer in the past.
+                            Choose the correct answer in the past.
                         </CardDescription>
                     </CardHeader>
                     <CardContent className="grid w-full gap-5 place-items-center mx-auto">

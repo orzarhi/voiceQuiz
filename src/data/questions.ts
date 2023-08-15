@@ -29,7 +29,7 @@ export const Questions = [
     {
         questionText: "Read",
         answerOptions: [
-            { answerText: "Read", isCorrect: false },
+            { answerText: "Readit", isCorrect: false },
             { answerText: "Read", isCorrect: true },
             { answerText: "Reading", isCorrect: false },
             { answerText: "Reads", isCorrect: false },
@@ -92,7 +92,7 @@ export const Questions = [
     {
         questionText: "Talk",
         answerOptions: [
-            { answerText: "Talked", isCorrect: false },
+            { answerText: "Talk", isCorrect: false },
             { answerText: "Talked", isCorrect: true },
             { answerText: "Talking", isCorrect: false },
             { answerText: "Talks", isCorrect: false },
@@ -173,7 +173,7 @@ export const Questions = [
     {
         questionText: "Think",
         answerOptions: [
-            { answerText: "Thought", isCorrect: false },
+            { answerText: "Think", isCorrect: false },
             { answerText: "Thought", isCorrect: true },
             { answerText: "Thinking", isCorrect: false },
             { answerText: "Thinks", isCorrect: false },
@@ -210,7 +210,7 @@ export const Questions = [
         questionText: "Build",
         answerOptions: [
             { answerText: "Built", isCorrect: true },
-            { answerText: "Built", isCorrect: false },
+            { answerText: "Build", isCorrect: false },
             { answerText: "Building", isCorrect: false },
             { answerText: "Builds", isCorrect: false },
         ],
