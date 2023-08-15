@@ -38,7 +38,7 @@ export const Questions = [
     {
         questionText: "Sleep",
         answerOptions: [
-            { answerText: "Slept", isCorrect: false },
+            { answerText: "Sleep", isCorrect: false },
             { answerText: "Sleeping", isCorrect: false },
             { answerText: "Sleeps", isCorrect: false },
             { answerText: "Slept", isCorrect: true },
