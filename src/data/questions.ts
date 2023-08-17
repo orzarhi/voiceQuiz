@@ -18,15 +18,6 @@ export const Questions = [
         ],
     },
     {
-        questionText: "Write",
-        answerOptions: [
-            { answerText: "Written", isCorrect: false },
-            { answerText: "Writing", isCorrect: false },
-            { answerText: "Wrote", isCorrect: true },
-            { answerText: "Writes", isCorrect: false },
-        ],
-    },
-    {
         questionText: "Read",
         answerOptions: [
             { answerText: "Readit", isCorrect: false },
@@ -47,7 +38,7 @@ export const Questions = [
     {
         questionText: "Buy",
         answerOptions: [
-            { answerText: "Bought", isCorrect: false },
+            { answerText: "Buy", isCorrect: false },
             { answerText: "Buying", isCorrect: false },
             { answerText: "Bought", isCorrect: true },
             { answerText: "Buys", isCorrect: false },
@@ -84,7 +75,7 @@ export const Questions = [
         questionText: "Play",
         answerOptions: [
             { answerText: "Played", isCorrect: true },
-            { answerText: "Played", isCorrect: false },
+            { answerText: "Play", isCorrect: false },
             { answerText: "Playing", isCorrect: false },
             { answerText: "Plays", isCorrect: false },
         ],

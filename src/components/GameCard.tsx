@@ -5,8 +5,11 @@ import { textToSpeech } from '@/lib/utils'
 import { useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
+import { useLevelStore } from '@/store/levelStore'
 
 export const GameCard = ({ }) => {
+    const { level } = useLevelStore();
+
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
     const [game, setGame] = useState({
@@ -33,12 +36,9 @@ export const GameCard = ({ }) => {
             })
 
         } else setGame({ ...game, endGame: true, })
-
     };
 
-    const handleNewGame = () => {
-        setGame({ ...game, currentQuestion: 0, score: 0, endGame: false, })
-    }
+    const handleNewGame = () => setGame({ ...game, currentQuestion: 0, score: 0, endGame: false, })
 
     return (
         <>
