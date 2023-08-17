@@ -14,22 +14,23 @@ import { FC } from "react";
 import { UserAvatar } from "./UserAvatar";
 import { Button } from "./ui/Button";
 import { Level } from "@/types/level";
-import { useLevelStore } from "@/store/levelStore";
+import { useLevelStore, useDropDownStore } from "@/store";
 
 interface UserAccountNavProps {
   user: Pick<User, 'name' | 'image' | 'email'>
 }
 
 export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
-  const { setLevel } = useLevelStore();
+  const { level: levelStore, setLevel } = useLevelStore();
+  const { dropDown, setDropDown } = useDropDownStore()
 
   const changeLevel = (level: Level) => setLevel(level)
 
   return (
-    <DropdownMenu>
+    <DropdownMenu onOpenChange={() => setDropDown(!dropDown)}>
       <DropdownMenuTrigger>
         <UserAvatar
-          className='sm:w-14 sm:h-14 w-10 h-10'
+          className='w-10 h-10 sm:w-14 sm:h-14'
           user={{
             name: user.name || null,
             image: user.image || null
@@ -53,7 +54,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             <DropdownMenuItem asChild className="drop-down-menu" key={level.id}>
               <Button
                 size='sm'
-                className="w-16 rounded-lg"
+                className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest" : null}`}
                 variant='ghost'
                 onClick={() => changeLevel(level.id as Level)}
               >

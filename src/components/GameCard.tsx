@@ -5,10 +5,12 @@ import { textToSpeech } from '@/lib/utils'
 import { useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
-import { useLevelStore } from '@/store/levelStore'
+import { useLevelStore } from '@/store/level'
+import { useDropDownStore } from '@/store'
 
 export const GameCard = ({ }) => {
     const { level } = useLevelStore();
+    const { dropDown } = useDropDownStore()
 
     const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -35,17 +37,18 @@ export const GameCard = ({ }) => {
                 currentQuestion: nextQuestion
             })
 
-        } else setGame({ ...game, endGame: true, })
+        } else setGame({ ...game, endGame: true })
     };
 
     const handleNewGame = () => setGame({ ...game, currentQuestion: 0, score: 0, endGame: false, })
 
     return (
-        <>
+        <main className={`${dropDown ? "blur-sm" : null}`}>
             {!game.endGame ? (
                 <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
-                    <div className="flex justify-start sm:text-lg text-base">
+                    <div className="flex justify-between sm:text-lg text-base">
                         <span>Score: {game.score}</span>
+                        {/* <span className='font-light'>{level}</span> */}
                     </div>
                     <CardHeader className="space-y-1 text-center">
                         <CardTitle
@@ -79,7 +82,7 @@ export const GameCard = ({ }) => {
                     <Button className='w-full md:w-2/5' onClick={handleNewGame}>New Game</Button>
                 </div>
             )}
-        </>
+        </main>
     )
 }
 
