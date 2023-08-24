@@ -20,7 +20,11 @@ export const GameCard = ({ }) => {
     const handleAnswerClick = async (isCorrect: boolean) => {
         setGame({ ...game, changeBackground: true })
 
+        if (isCorrect) new Audio("/audio/correct.mp3").play();
+        else new Audio("/audio/incorrect.mp3").play();
+
         await delay(1000);
+
         if (isCorrect) {
             setGame({ ...game, score: game.score++ })
         }
@@ -44,7 +48,6 @@ export const GameCard = ({ }) => {
                 <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
                     <div className="flex justify-between sm:text-lg text-base">
                         <span>Score: {game.score}</span>
-                        {/* <span className='font-light'>{level}</span> */}
                     </div>
                     <CardHeader className="space-y-1 text-center">
                         <CardTitle

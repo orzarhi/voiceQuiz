@@ -4,6 +4,7 @@ export type QuestionType = {
 }
 
 export type AnswerType = {
+    id: number;
     answerText: string;
     isCorrect: boolean;
 }

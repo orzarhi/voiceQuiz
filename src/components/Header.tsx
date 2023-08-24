@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
 import logo from "@/images/logo.png";
 import Image from 'next/image';
+import Link from 'next/link';
+import { FC } from 'react';
 import { UserAccountNav } from './UserAccountNav';
-import Link from 'next/link'
 
 interface HeaderProps {
   session: any
