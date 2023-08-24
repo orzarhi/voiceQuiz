@@ -31,7 +31,7 @@ export const Users: FC<UsersProps> = ({ users }) => {
                         <TableCell >{user.name}</TableCell>
                         <TableCell>{user.username}</TableCell>
                         <TableCell>{user.email}</TableCell>
-                        <TableCell>{user.isAdmin ? "True" : "False"}</TableCell>
+                        <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
