@@ -8,14 +8,15 @@ import {
   DropdownMenuTrigger
 } from "@/components/ui/DropdownMenu";
 import { LEVELS } from "@/constants/level";
+import { useDropDownStore, useLevelStore } from "@/store";
+import { Level } from "@/types/level";
 import { User } from "next-auth";
 import { signOut } from "next-auth/react";
+import Link from 'next/link';
 import { FC } from "react";
 import { UserAvatar } from "./UserAvatar";
 import { Button } from "./ui/Button";
-import { Level } from "@/types/level";
-import { useLevelStore, useDropDownStore } from "@/store";
-import Link from 'next/link'
+import { ModeToggle } from "./ModeToggle";
 
 interface UserAccountNavProps {
   user: Pick<User, 'name' | 'image' | 'email' | 'isAdmin'>
@@ -37,12 +38,13 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             image: user.image || null
           }} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='bg-white border border-black/30' align='end'>
+      <DropdownMenuContent className='borderdark:border-white/10 border-black/30`' align='end'>
         <div className='flex items-center justify-start gap-2 p-2'>
           <div className='flex flex-col space-y-1 leading-none'>
             {user?.name && <p className='font-medium'>{user.name}</p>}
-            {user?.email && <p className='w-[200px] truncate text-sm text-zinc-700'>{user.email}</p>}
+            {user?.email && <p className='w-[200px] truncate text-sm dark:text-zinc-200/70'>{user.email}</p>}
           </div>
+          <ModeToggle />
         </div>
         <DropdownMenuSeparator />
 
@@ -50,12 +52,12 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
           <span className="underline">Choose a level:</span>
         </div>
 
-        <div className='flex items-center justify-center gap-2 p-2'>
+        <div className='flex items-center justify-center gap-2 p-2 '>
           {LEVELS?.map((level) => (
-            <DropdownMenuItem asChild className="drop-down-menu" key={level.id}>
+            <DropdownMenuItem asChild className="drop-down-menu text-zinc-500/70 dark:text-zinc-200/70" key={level.id}>
               <Button
                 size='sm'
-                className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest p-5" : null}`}
+                className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest text-black dark:text-white p-5" : null}`}
                 variant='ghost'
                 onClick={() => changeLevel(level.id as Level)}
               >
@@ -67,9 +69,6 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
 
         <DropdownMenuSeparator />
         <hr />
-        {/* <DropdownMenuItem asChild className='drop-down-menu'>
-          <Link href='/profile'>Profile</Link>
-        </DropdownMenuItem> */}
         {user?.isAdmin ?
           <>
             <DropdownMenuItem asChild className='drop-down-menu'>

@@ -14,6 +14,7 @@ import { Label } from './ui/Label'
 import logo from "@/images/logo.png"
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { ModeToggle } from './ModeToggle'
 
 export const SignUp = ({ }) => {
     const { toast } = useToast()
@@ -40,7 +41,8 @@ export const SignUp = ({ }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container p-3 shadow-2xl'>
-                <div className='flex justify-end -mb-8'>
+                <div className='flex justify-between -mb-8'>
+                    <ModeToggle />
                     <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">

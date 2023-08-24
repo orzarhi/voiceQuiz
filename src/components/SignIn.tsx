@@ -15,6 +15,7 @@ import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
+import { ModeToggle } from './ModeToggle'
 
 export const SignIn = ({ }) => {
     const { toast } = useToast()
@@ -58,7 +59,8 @@ export const SignIn = ({ }) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className='flex justify-center items-center h-[90vh]'>
             <Card className='container p-3 shadow-2xl'>
-                <div className='flex justify-end -mb-8'>
+                <div className='flex justify-between -mb-8'>
+                    <ModeToggle />
                     <Image src={logo} className='not-drag sm:w-24 w-16' alt='voice quiz' />
                 </div>
                 <CardHeader className="space-y-1">
@@ -77,7 +79,7 @@ export const SignIn = ({ }) => {
                             <span className="w-full border-t" />
                         </div>
                         <div className="relative flex justify-center text-xs uppercase">
-                            <span className="px-2 bg-zinc-50 rounded-xl">
+                            <span className="px-2 rounded-xl">
                                 Or continue with
                             </span>
                         </div>

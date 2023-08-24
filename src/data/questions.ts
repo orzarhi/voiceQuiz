@@ -27,6 +27,33 @@ export const Questions = [
         ],
     },
     {
+        questionText: "Jump",
+        answerOptions: [
+            { answerText: "Jump", isCorrect: false },
+            { answerText: "Jumping", isCorrect: false },
+            { answerText: "Jumps", isCorrect: false },
+            { answerText: "Jumped", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Laugh",
+        answerOptions: [
+            { answerText: "Laughed", isCorrect: true },
+            { answerText: "Laugh", isCorrect: false },
+            { answerText: "Laughing", isCorrect: false },
+            { answerText: "Laughs", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Cook",
+        answerOptions: [
+            { answerText: "Cooked", isCorrect: true },
+            { answerText: "Cooking", isCorrect: false },
+            { answerText: "Cooks", isCorrect: false },
+            { answerText: "Cooke", isCorrect: false },
+        ],
+    },
+    {
         questionText: "Sleep",
         answerOptions: [
             { answerText: "Sleep", isCorrect: false },

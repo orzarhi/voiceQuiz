@@ -17,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={cn('bg-white text-slate-900 antialiased', inter.className)}>
+    <html lang="en" className={cn('text-slate-900 antialiased', inter.className)}>
       <body className={inter.className}>
         <Providers>
           <main className='container h-full px-1.5 pt-8 mx-auto max-w-5xl'>

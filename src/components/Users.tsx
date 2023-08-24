@@ -1,10 +1,9 @@
 'use client'
 
-import React, { FC } from 'react'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
-import { UserType } from '@/types/user';
 import { useDropDownStore } from '@/store';
-import { Button } from './ui/Button';
+import { UserType } from '@/types/user';
+import { FC } from 'react';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 
 interface UsersProps {
     users: UserType[]
