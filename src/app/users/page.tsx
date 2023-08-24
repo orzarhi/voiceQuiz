@@ -10,8 +10,8 @@ export default async function page({ }) {
     if (!session) redirect('/sign-in');
 
     const URL = process.env.NODE_ENV === 'development' ?
-        `${process.env.DEV_URL}` :
-        `${process.env.PROD_URL}`
+        process.env.DEV_URL :
+        process.env.PROD_URL
 
     const response = await fetch(`${URL}/api/users`)
     const users = await response.json()
