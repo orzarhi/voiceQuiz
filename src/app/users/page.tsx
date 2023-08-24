@@ -13,7 +13,7 @@ export default async function page({ }) {
         process.env.DEV_URL :
         process.env.PROD_URL
 
-    const response = await fetch(`${URL}/api/users`)
+    const response = await fetch(`${process.env.PROD_URL}/api/users`)
     const users = await response.json()
 
     return (
