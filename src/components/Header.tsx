@@ -13,6 +13,7 @@ interface HeaderProps {
 
 export const Header: FC<HeaderProps> = ({ session }) => {
   const { theme } = useTheme()
+
   return (
     <main className={`flex justify-between border ${theme === 'dark' ? "border-white/20" : "border-black/10"} p-0.5 rounded-2xl`}>
       <Link href='/'>
