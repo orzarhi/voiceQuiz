@@ -42,6 +42,7 @@ export const authOptions: NextAuthOptions = {
                 session.user.email = token?.email;
                 session.user.image = token?.picture;
                 session.user.username = token?.username;
+                session.user.isAdmin = token?.isAdmin;
             }
             return session;
 
@@ -50,6 +51,9 @@ export const authOptions: NextAuthOptions = {
             if (account) {
                 token.accessToken = account.access_token;
                 token.id = user.id;
+                token.name = user.name;
+                token.email = user.email;
+                token.isAdmin = user.isAdmin;
                 token.username = (user as User).username;
             }
             return token;

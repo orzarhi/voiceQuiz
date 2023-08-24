@@ -3,6 +3,8 @@ import { twMerge } from 'tailwind-merge'
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
+export const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
 export const textToSpeech = (text: string) => {
     if (text) {
         if ('speechSynthesis' in window) {

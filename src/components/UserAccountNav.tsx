@@ -15,9 +15,10 @@ import { UserAvatar } from "./UserAvatar";
 import { Button } from "./ui/Button";
 import { Level } from "@/types/level";
 import { useLevelStore, useDropDownStore } from "@/store";
+import Link from 'next/link'
 
 interface UserAccountNavProps {
-  user: Pick<User, 'name' | 'image' | 'email'>
+  user: Pick<User, 'name' | 'image' | 'email' | 'isAdmin'>
 }
 
 export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
@@ -54,7 +55,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             <DropdownMenuItem asChild className="drop-down-menu" key={level.id}>
               <Button
                 size='sm'
-                className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest" : null}`}
+                className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest p-5" : null}`}
                 variant='ghost'
                 onClick={() => changeLevel(level.id as Level)}
               >
@@ -65,6 +66,19 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         </div>
 
         <DropdownMenuSeparator />
+        <hr />
+        {user?.isAdmin ?
+          <>
+            <DropdownMenuItem asChild className='drop-down-menu'>
+              <Link href='/'>Home</Link>
+            </DropdownMenuItem>
+
+
+            < DropdownMenuItem asChild className='drop-down-menu'>
+              <Link href='users'>Users</Link>
+            </DropdownMenuItem>
+          </> : null
+        }
         <hr />
         <DropdownMenuItem
           onSelect={(e) => {
@@ -78,7 +92,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         </DropdownMenuItem>
 
       </DropdownMenuContent>
-    </DropdownMenu>
+    </DropdownMenu >
   )
 }
 
