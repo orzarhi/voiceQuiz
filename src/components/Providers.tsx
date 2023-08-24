@@ -9,11 +9,11 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <ThemeProvider attribute='class'>
-                <SessionProvider>
-                    {children}
-                </SessionProvider>
-            </ThemeProvider>
+
+            <SessionProvider>
+                {children}
+            </SessionProvider>
+
         </QueryClientProvider>
     )
 }
