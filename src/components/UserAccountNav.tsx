@@ -67,6 +67,9 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
 
         <DropdownMenuSeparator />
         <hr />
+        {/* <DropdownMenuItem asChild className='drop-down-menu'>
+          <Link href='/profile'>Profile</Link>
+        </DropdownMenuItem> */}
         {user?.isAdmin ?
           <>
             <DropdownMenuItem asChild className='drop-down-menu'>
@@ -79,6 +82,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             </DropdownMenuItem>
           </> : null
         }
+
         <hr />
         <DropdownMenuItem
           onSelect={(e) => {

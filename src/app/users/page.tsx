@@ -7,7 +7,6 @@ export default async function page({ }) {
     const session = await getAuthSession();
 
     if (!session?.user?.isAdmin) redirect('/')
-    if (!session) redirect('/sign-in');
 
     const URL = process.env.NODE_ENV === 'development' ?
         process.env.DEV_URL :

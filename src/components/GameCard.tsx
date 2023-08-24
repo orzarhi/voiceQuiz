@@ -2,16 +2,13 @@
 
 import { Questions } from '@/data/questions'
 import { delay, textToSpeech } from '@/lib/utils'
+import { useDropDownStore } from '@/store'
 import { useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
-import { useLevelStore } from '@/store/level'
-import { useDropDownStore } from '@/store'
 
 export const GameCard = ({ }) => {
-    const { level } = useLevelStore();
     const { dropDown } = useDropDownStore()
-
 
     const [game, setGame] = useState({
         currentQuestion: 0,
