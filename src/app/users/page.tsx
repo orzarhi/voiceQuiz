@@ -9,7 +9,11 @@ export default async function page({ }) {
     if (!session?.user?.isAdmin) redirect('/')
     if (!session) redirect('/sign-in');
 
-    const response = await fetch('https://quiz-six-jade.vercel.app/api/users')
+    const URL = process.env.NODE_ENV === 'development' ?
+        `${process.env.DEV_URL}` :
+        `${process.env.PROD_URL}`
+
+    const response = await fetch(`${URL}/api/users`)
     const users = await response.json()
 
     return (
