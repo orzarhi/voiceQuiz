@@ -1,6 +1,5 @@
 import { GameCard } from '@/components/GameCard';
 import { Header } from '@/components/Header';
-import { ModeToggle } from '@/components/ModeToggle';
 import { getAuthSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
@@ -11,7 +10,6 @@ export default async function Home() {
 
   return (
     <>
-
       <Header session={session} />
       <GameCard />
     </>
