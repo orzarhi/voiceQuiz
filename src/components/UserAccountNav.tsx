@@ -31,7 +31,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
   const changeLevel = (level: Level) => {
     setLevel(level)
     toast({
-      description: 'It`s still in development 🏭, Sorry!',
+      description: 'It`s still in development 🔨, Sorry!',
       variant: 'destructive'
 
 
