@@ -42,7 +42,8 @@ export const UserAuthForm: FC<UserAuthFormProps> = ({ className, title, ...props
                 onClick={loginWithGoogle}
                 isLoading={isLoading}
                 size='sm'
-                className='w-full' variant='outline'>
+                className='w-full'
+                variant='outline'>
                 {isLoading ? null : icon}
                 {title}
             </Button>
