@@ -3,6 +3,7 @@
 import { Questions } from '@/data/questions'
 import { delay, textToSpeech } from '@/lib/utils'
 import { useDropDownStore } from '@/store'
+import { RotateCcw } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
@@ -48,6 +49,7 @@ export const GameCard = ({ }) => {
                 <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
                     <div className="flex justify-between sm:text-lg text-base">
                         <span>Score: {game.score}</span>
+                        <RotateCcw className='w-5 h-5 cursor-pointer' onClick={handleNewGame} />
                     </div>
                     <CardHeader className="space-y-1 text-center">
                         <CardTitle

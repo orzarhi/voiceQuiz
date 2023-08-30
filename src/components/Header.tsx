@@ -1,21 +1,19 @@
 'use client'
 
 import logo from "@/images/logo.png";
-import { useTheme } from "next-themes";
 import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 import { UserAccountNav } from './UserAccountNav';
+import { SessionType, UserType } from "@/types/user";
 
 interface HeaderProps {
-  session: any
+  session: SessionType
 }
 
 export const Header: FC<HeaderProps> = ({ session }) => {
-  const { theme } = useTheme()
-
   return (
-    <main className={`flex justify-between border ${theme === 'dark' ? "border-white/20" : "border-black/10"} p-0.5 rounded-2xl`}>
+    <main className='flex justify-between border dark:border-white/20 border-black/10 p-0.5 rounded-2xl'>
       <Link href='/'>
         <Image src={logo} className='not-drag w-12 sm:mt-1 sm:h-12 sm:w-16 cursor-pointer' alt='voice quiz' />
       </Link>

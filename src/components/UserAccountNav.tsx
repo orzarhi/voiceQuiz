@@ -17,6 +17,7 @@ import { FC } from "react";
 import { UserAvatar } from "./UserAvatar";
 import { Button } from "./ui/Button";
 import { ModeToggle } from "./ModeToggle";
+import { useToast } from "@/hooks/use-toast";
 
 interface UserAccountNavProps {
   user: Pick<User, 'name' | 'image' | 'email' | 'isAdmin'>
@@ -25,8 +26,17 @@ interface UserAccountNavProps {
 export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
   const { level: levelStore, setLevel } = useLevelStore();
   const { dropDown, setDropDown } = useDropDownStore()
+  const { toast } = useToast()
 
-  const changeLevel = (level: Level) => setLevel(level)
+  const changeLevel = (level: Level) => {
+    setLevel(level)
+    toast({
+      description: 'It`s still in development 🏭, Sorry!',
+      variant: 'destructive'
+
+
+    })
+  }
 
   return (
     <DropdownMenu onOpenChange={() => setDropDown(!dropDown)}>
@@ -38,7 +48,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             image: user.image || null
           }} />
       </DropdownMenuTrigger>
-      <DropdownMenuContent className='borderdark:border-white/10 border-black/30`' align='end'>
+      <DropdownMenuContent className='border dark:border-white/10 border-black/30' align='end'>
         <div className='flex items-center justify-start gap-2 p-2'>
           <div className='flex flex-col space-y-1 leading-none'>
             {user?.name && <p className='font-medium'>{user.name}</p>}
@@ -68,21 +78,20 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         </div>
 
         <DropdownMenuSeparator />
-        <hr />
+
         {user?.isAdmin ?
           <>
-            <DropdownMenuItem asChild className='drop-down-menu'>
+            <DropdownMenuItem asChild className='drop-down-menu dark:hover:bg-zinc-700'>
               <Link href='/'>Home</Link>
             </DropdownMenuItem>
 
-
-            < DropdownMenuItem asChild className='drop-down-menu'>
+            < DropdownMenuItem asChild className='drop-down-menu dark:hover:bg-zinc-700'>
               <Link href='users'>Users</Link>
             </DropdownMenuItem>
           </> : null
         }
 
-        <hr />
+
         <DropdownMenuItem
           onSelect={(e) => {
             e.preventDefault()
@@ -90,7 +99,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
               callbackUrl: `${window.location.origin}/sign-in`
             })
           }}
-          className='drop-down-menu'>
+          className='drop-down-menu dark:hover:bg-zinc-700'>
           Sign out
         </DropdownMenuItem>
 

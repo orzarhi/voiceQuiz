@@ -83,7 +83,7 @@ export const Questions = [
     {
         questionText: "Dance",
         answerOptions: [
-            { answerText: "Danced", isCorrect: false },
+            { answerText: "Dance", isCorrect: false },
             { answerText: "Dancing", isCorrect: false },
             { answerText: "Danced", isCorrect: true },
             { answerText: "Dances", isCorrect: false },

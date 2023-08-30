@@ -2,19 +2,18 @@
 
 import { useSignUp } from '@/hooks/use-auth'
 import { useToast } from '@/hooks/use-toast'
+import logo from "@/images/logo.png"
 import { SignUpRequest, signUpValidator } from '@/lib/validators/signUp'
 import { SignUpType } from '@/types/user-credentials'
 import { zodResolver } from '@hookform/resolvers/zod'
-import Link from "next/link"
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useForm } from 'react-hook-form'
+import { ModeToggle } from './ModeToggle'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Input } from './ui/Input'
 import { Label } from './ui/Label'
-import logo from "@/images/logo.png"
-import Image from 'next/image'
-import { useRouter } from 'next/navigation'
-import { ModeToggle } from './ModeToggle'
 
 export const SignUp = ({ }) => {
     const { toast } = useToast()
@@ -33,7 +32,7 @@ export const SignUp = ({ }) => {
             toast({
                 title: 'Something went wrong',
                 description: 'please try again later.',
-                variant: 'destructive'
+                variant: 'default'
             })
         }
     }

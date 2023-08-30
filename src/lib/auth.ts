@@ -1,13 +1,15 @@
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { User } from '@prisma/client';
 import bcrypt from 'bcrypt';
 import { NextAuthOptions, getServerSession } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { signInValidator } from './validators/signIn';
-import { db } from './db';
-import { User } from '@prisma/client';
-import GoogleProvider from "next-auth/providers/google";
 import GitHubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
+import { db } from './db';
+import { signInValidator } from './validators/signIn';
 
 export const authOptions: NextAuthOptions = {
+    adapter: PrismaAdapter(db),
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -26,7 +28,7 @@ export const authOptions: NextAuthOptions = {
                 });
                 if (!user) throw new Error('Invalid username or password.');;
 
-                const isPasswordValid = await bcrypt.compare(password, user.password);
+                const isPasswordValid = await bcrypt.compare(password, user.password || '');
 
                 if (!isPasswordValid) throw new Error('Invalid username or password.');
 
@@ -34,6 +36,7 @@ export const authOptions: NextAuthOptions = {
             },
         }),
     ],
+
     callbacks: {
         session({ session, token }) {
             if (token) {
@@ -54,7 +57,7 @@ export const authOptions: NextAuthOptions = {
                 token.name = user.name;
                 token.email = user.email;
                 token.isAdmin = user.isAdmin;
-                token.username = (user as User).username;
+                token.username = (user as User)?.username;
             }
             return token;
         },
@@ -65,6 +68,7 @@ export const authOptions: NextAuthOptions = {
     session: {
         strategy: 'jwt',
     },
+
     secret: process.env.JWT_SECRET_KEY,
 }
 export const getAuthSession = () => getServerSession(authOptions)
