@@ -1,3 +1,4 @@
+import { getAuthSession } from "@/lib/auth";
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
@@ -9,6 +10,13 @@ export async function GET() {
                 username: true,
                 email: true,
                 isAdmin: true,
+                game: {
+                    select: {
+                        score: true,
+                        level: true,
+                        date: true,
+                    }
+                },
             }
         });
 

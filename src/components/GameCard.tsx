@@ -1,8 +1,11 @@
 'use client'
 
+import Loading from '@/app/loading'
 import { Questions } from '@/data/questions'
+import { useGame } from '@/hooks/use-game'
 import { delay, textToSpeech } from '@/lib/utils'
-import { useDropDownStore } from '@/store'
+import { GameRequest } from '@/lib/validators/game'
+import { useDropDownStore, useLevelStore } from '@/store'
 import { RotateCcw } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from './ui/Button'
@@ -10,7 +13,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 
 export const GameCard = ({ }) => {
     const { dropDown } = useDropDownStore()
-    //
+    const { level } = useLevelStore()
+
+    const { mutate: result, isLoading } = useGame()
+
     const [game, setGame] = useState({
         currentQuestion: 0,
         score: 0,
@@ -38,10 +44,21 @@ export const GameCard = ({ }) => {
                 currentQuestion: nextQuestion
             })
 
-        } else setGame({ ...game, endGame: true })
+        } else {
+            const payload: GameRequest = {
+                score: game.score,
+                level,
+                date: new Date()
+            }
+
+            result(payload)
+            setGame({ ...game, endGame: true })
+        }
     };
 
     const handleNewGame = () => setGame({ ...game, currentQuestion: 0, score: 0, endGame: false, })
+
+    if (isLoading) return <Loading />
 
     return (
         <main className={`${dropDown ? "blur-[1.5px]" : null}`}>

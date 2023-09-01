@@ -1,19 +1,16 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Header } from '@/components/Header';
 import { Users } from "@/components/Users";
+import { useUsers } from '@/hooks/use-users';
 import { getAuthSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
 export default async function page({ }) {
     const session = await getAuthSession();
 
-    if (!session?.user?.isAdmin) return redirect('/')
+    if (!session?.user?.isAdmin) redirect('/')
 
-    const URL = process.env.NODE_ENV === 'development' ?
-        process.env.DEV_URL :
-        process.env.PROD_URL
-
-    const response = await fetch(`${URL}/api/users`)
-    const users = await response.json()
+    const users = await useUsers()
 
     return (
         <>

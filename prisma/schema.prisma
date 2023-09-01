@@ -48,6 +48,7 @@ model User {
   accounts      Account[]
   sessions      Session[]
   isAdmin       Boolean?  @default(false)
+  game          Game[]
 }
 
 model VerificationToken {
@@ -57,4 +58,13 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Game {
+  id     String   @id @default(auto()) @map("_id") @db.ObjectId
+  score  Int      @default(0)
+  level  String?
+  date   DateTime
+  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId String   @db.ObjectId
 }

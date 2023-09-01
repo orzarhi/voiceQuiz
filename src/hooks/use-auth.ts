@@ -18,7 +18,7 @@ export const useSignUp = () => {
             const { data } = await axios.post('/api/sign-up', payload);
             return data;
         },
-        onSuccess: async () => {
+        onSuccess: () => {
             toast({
                 title: 'Registered successfully.',
                 description: 'You can now log in.',
