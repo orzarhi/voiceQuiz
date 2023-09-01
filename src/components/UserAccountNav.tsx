@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/DropdownMenu";
 import { LEVELS } from "@/constants/level";
 import { useDropDownStore, useLevelStore } from "@/store";
-import { Level } from "@/types/level";
+import { LevelType } from "@/types/level";
 import { User } from "next-auth";
 import { signOut } from "next-auth/react";
 import Link from 'next/link';
@@ -28,7 +28,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
   const { dropDown, setDropDown } = useDropDownStore()
   const { toast } = useToast()
 
-  const changeLevel = (level: Level) => {
+  const changeLevel = (level: LevelType) => {
     setLevel(level)
     toast({
       description: 'It`s still in development 🔨, Sorry!',
@@ -69,7 +69,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
                 size='sm'
                 className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest text-black dark:text-white p-5" : null}`}
                 variant='ghost'
-                onClick={() => changeLevel(level.id as Level)}
+                onClick={() => changeLevel(level.id as LevelType)}
               >
                 {level.label}
               </Button>

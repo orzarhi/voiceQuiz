@@ -1,5 +1,5 @@
 import { GameType } from "./game";
-import { Level } from "./level";
+import { LevelType } from "./level";
 
 export type UserType = {
     id: string;
