@@ -12,26 +12,25 @@ interface UsersProps {
 
 export const Users: FC<UsersProps> = ({ users }) => {
     const { dropDown } = useDropDownStore()
-    // users?.map((user: UserType) => user.game.find((game: GameType) => Math.max(game.score)))
 
     return (
         <Table className={`border mt-10 ${dropDown ? "blur-[1.5px]" : null}`}>
-            <TableCaption>List of all users.</TableCaption>
+            <TableCaption>List of all users ({users?.length}).</TableCaption>
             <TableHeader>
                 <TableRow>
+                    <TableHead></TableHead>
                     <TableHead>Name</TableHead>
                     <TableHead>Username</TableHead>
                     <TableHead>Email</TableHead>
                     <TableHead>Attempts</TableHead>
-                    {/* <TableHead>Level</TableHead> */}
                     <TableHead>Best Score</TableHead>
-                    {/* <TableHead>Date</TableHead> */}
                     <TableHead>Admin</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {users?.map((user: UserType) => (
+                {users?.map((user: UserType, index: number) => (
                     <TableRow key={user.email}>
+                        <TableCell >{index + 1}.</TableCell>
                         <TableCell >{user.name}</TableCell>
                         <TableCell>{user.username}</TableCell>
                         <TableCell>{user.email}</TableCell>
@@ -42,8 +41,6 @@ export const Users: FC<UsersProps> = ({ users }) => {
                                 0
                             )}
                         </TableCell>
-
-                        {/* <TableCell>{user?.game.}</TableCell> */}
                         <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                     </TableRow>
                 ))}

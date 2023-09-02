@@ -1,1 +1,1 @@
-export const REVALIDATE = 3600
+export const REVALIDATE = 0; // 0 means always revalidate

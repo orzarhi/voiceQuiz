@@ -1,4 +1,4 @@
-import { domainConfig } from "@/config/domain"
+import { domainConfig } from "@/config/domain";
 import { REVALIDATE } from "@/config/revalidate";
 
 export const useUsers = async () => {
