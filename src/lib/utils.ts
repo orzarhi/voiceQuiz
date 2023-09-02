@@ -1,5 +1,6 @@
 import { ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { format } from 'date-fns';
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
@@ -15,4 +16,10 @@ export const textToSpeech = (text: string) => {
       alert('Sorry your browser does not support this feature');
     }
   }
+};
+
+export const formatDate = (date: Date, newFormat?: string) => {
+  const fm = newFormat || 'dd/MM/yyyy';
+
+  return date ? format(new Date(date), fm) : '';
 };
