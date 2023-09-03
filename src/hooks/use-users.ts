@@ -1,18 +1,22 @@
-import { domainConfig } from "@/config/domain";
-import { REVALIDATE } from "@/config/revalidate";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+import { useToast } from "./use-toast";
 
-export const useUsers = async () => {
-    const { url } = domainConfig;
+export const useUsers = () => {
+    const { toast } = useToast();
 
-    try {
-        const response = await fetch(`${url}/api/users`,
-            {
-                next: { 'revalidate': REVALIDATE }
+    return useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const { data } = await axios.get('/api/users');
+            return data;
+        },
+        onError: () => {
+            toast({
+                title: 'Error',
+                description: 'There was an error fetching the users.',
+                variant: 'destructive',
             })
-        const users = await response.json()
-
-        return users
-    } catch (error) {
-        console.log(error)
-    }
+        },
+    })
 }

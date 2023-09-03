@@ -6,13 +6,17 @@ import { UserType } from '@/types/user';
 import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 import { formatDate } from '@/lib/utils';
+import { useUsers } from '@/hooks/use-users';
+import Loading from '@/app/loading';
 
 interface UsersProps {
-    users?: UserType[]
 }
 
-export const Users: FC<UsersProps> = ({ users }) => {
+export const Users: FC<UsersProps> = () => {
+    const { data: users, isLoading } = useUsers()
     const { dropDown } = useDropDownStore()
+
+    if (isLoading) return <Loading />
 
     return (
         <Table className={`border mt-10 ${dropDown ? "blur-[1.5px]" : null}`}>
