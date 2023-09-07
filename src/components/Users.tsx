@@ -7,7 +7,7 @@ import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 import { formatDate } from '@/lib/utils';
 import { useUsers } from '@/hooks/use-users';
-import Loading from '@/components/Loading';
+import { Loading } from '@/components/Loading';
 import { motion } from "framer-motion";
 
 interface UsersProps {

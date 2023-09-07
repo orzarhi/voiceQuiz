@@ -1,6 +1,6 @@
 'use client'
 
-import Loading from '@/components/Loading'
+import { Loading } from '@/components/Loading'
 import { Questions } from '@/data/questions'
 import { useGame } from '@/hooks/use-game'
 import { delay, textToSpeech } from '@/lib/utils'
@@ -73,7 +73,7 @@ export const GameCard = ({ }) => {
                 }}
             >
                 {!game.endGame ? (
-                    <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
+                    <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 shadow-lg shadow-black/40 dark:shadow-white/40'>
                         <div className="flex justify-between sm:text-lg text-base">
                             <span>Score: {game.score}</span>
                             <RotateCcw className='w-5 h-5 cursor-pointer' onClick={handleNewGame} />

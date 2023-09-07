@@ -1,8 +1,7 @@
-import { Loader2 } from "lucide-react"
-import Image from "next/image"
 import logo from "@/images/logo.png";
+import Image from "next/image";
 
-export default function Loading() {
+export const Loading = () => {
     return (
         <div className="flex justify-center items-center mt-24">
             <div className="relative w-14 h-14 shadow-md animate-spin rounded-full bg-gradient-to-r from-purple-500/50 to-teal-600/50 border-black border dark:border-white">
