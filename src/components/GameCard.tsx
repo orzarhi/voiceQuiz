@@ -1,6 +1,6 @@
 'use client'
 
-import Loading from '@/app/loading'
+import Loading from '@/components/Loading'
 import { Questions } from '@/data/questions'
 import { useGame } from '@/hooks/use-game'
 import { delay, textToSpeech } from '@/lib/utils'
@@ -10,6 +10,7 @@ import { RotateCcw } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
+import { motion } from "framer-motion";
 
 export const GameCard = ({ }) => {
     const { dropDown } = useDropDownStore()
@@ -62,44 +63,54 @@ export const GameCard = ({ }) => {
 
     return (
         <main className={`${dropDown ? "blur-[1.5px]" : null}`}>
-            {!game.endGame ? (
-                <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
-                    <div className="flex justify-between sm:text-lg text-base">
-                        <span>Score: {game.score}</span>
-                        <RotateCcw className='w-5 h-5 cursor-pointer' onClick={handleNewGame} />
+            <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.8,
+                    delay: 0.5,
+                    ease: [0, 0.71, 0.2, 1.01]
+                }}
+            >
+                {!game.endGame ? (
+                    <Card className='mt-10 p-5 sm:flex-col sm:relative sm:items-center sm:p-4 sm:mx-auto sm:mt-36 sm:w-3/5 sm:shadow-md'>
+                        <div className="flex justify-between sm:text-lg text-base">
+                            <span>Score: {game.score}</span>
+                            <RotateCcw className='w-5 h-5 cursor-pointer' onClick={handleNewGame} />
+                        </div>
+                        <CardHeader className="space-y-1 text-center">
+                            <CardTitle
+                                className="mx-auto text-2xl cursor-pointer"
+                                onClick={() => textToSpeech(Questions[game.currentQuestion].questionText)}>
+                                {Questions[game.currentQuestion].questionText} 🔊
+                            </CardTitle>
+                            <CardDescription className='text-base'>
+                                Choose the correct answer in the past.
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent className="grid w-full gap-5 place-items-center mx-auto">
+                            {Questions[game.currentQuestion].answerOptions.map((answerOption, index) => (
+                                <div key={index} className='w-full'>
+                                    <Button
+                                        className={`w-full ${game.changeBackground && answerOption.isCorrect ? 'bg-green-500' : null}`}
+                                        variant='outline'
+                                        onClick={() => handleAnswerClick(answerOption?.isCorrect)}>
+                                        {answerOption.answerText}
+                                    </Button>
+                                </div>
+                            ))}
+                        </CardContent>
+                        <CardFooter className='w-full flex justify-center mt-5'>
+                            <span>Questions: <span className='font-bold'>{game.currentQuestion + 1}</span>/{Questions.length}</span>
+                        </CardFooter>
+                    </Card >
+                ) : (
+                    <div className='flex flex-col justify-center items-center h-[60vh] space-y-5 p-10'>
+                        <h2 className='text-xl'>You scored {game.score} out of {Questions.length}.</h2>
+                        <Button className='w-full md:w-2/5' variant='outline' onClick={handleNewGame}>New Game</Button>
                     </div>
-                    <CardHeader className="space-y-1 text-center">
-                        <CardTitle
-                            className="mx-auto text-2xl cursor-pointer"
-                            onClick={() => textToSpeech(Questions[game.currentQuestion].questionText)}>
-                            {Questions[game.currentQuestion].questionText} 🔊
-                        </CardTitle>
-                        <CardDescription className='text-base'>
-                            Choose the correct answer in the past.
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent className="grid w-full gap-5 place-items-center mx-auto">
-                        {Questions[game.currentQuestion].answerOptions.map((answerOption, index) => (
-                            <div key={index} className='w-full'>
-                                <Button
-                                    className={`w-full ${game.changeBackground && answerOption.isCorrect ? 'bg-green-500' : null}`}
-                                    variant='outline'
-                                    onClick={() => handleAnswerClick(answerOption?.isCorrect)}>
-                                    {answerOption.answerText}
-                                </Button>
-                            </div>
-                        ))}
-                    </CardContent>
-                    <CardFooter className='w-full flex justify-center mt-5'>
-                        <span>Questions: <span className='font-bold'>{game.currentQuestion + 1}</span>/{Questions.length}</span>
-                    </CardFooter>
-                </Card >
-            ) : (
-                <div className='flex flex-col justify-center items-center h-[60vh] space-y-5 p-10'>
-                    <h2 className='text-xl'>You scored {game.score} out of {Questions.length}.</h2>
-                    <Button className='w-full md:w-2/5' variant='outline' onClick={handleNewGame}>New Game</Button>
-                </div>
-            )}
+                )}
+            </motion.div>
         </main>
     )
 }
