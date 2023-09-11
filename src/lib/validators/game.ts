@@ -3,6 +3,7 @@ import { z } from 'zod';
 export const gameValidator = z.object({
     score: z.number().min(0).max(100),
     level: z.string(),
+    questionsLength: z.number().min(0).max(100),
     date: z.string().transform(str => new Date(str)),
 })
 

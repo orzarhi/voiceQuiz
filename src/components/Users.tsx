@@ -20,6 +20,9 @@ export const Users: FC<UsersProps> = ({ users }) => {
 
     // if (isLoading) return <Loading />
 
+    // i want to show game object in the table
+
+
     return (
         <>
 
@@ -41,9 +44,9 @@ export const Users: FC<UsersProps> = ({ users }) => {
                             <TableHead>Username</TableHead>
                             <TableHead>Email</TableHead>
                             <TableHead>CreatedAt</TableHead>
-                            <TableHead>Attempts</TableHead>
-                            <TableHead>Best Score</TableHead>
                             <TableHead>Admin</TableHead>
+                            <TableHead>Attempts</TableHead>
+                            <TableHead>Level</TableHead>
                         </TableRow>
                     </TableHeader>
                     <TableBody>
@@ -53,14 +56,29 @@ export const Users: FC<UsersProps> = ({ users }) => {
                                 <TableCell>{user.username}</TableCell>
                                 <TableCell>{user.email}</TableCell>
                                 <TableCell>{formatDate(user.createdAt)}</TableCell>
+                                <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                                 <TableCell>{user?.game.length}</TableCell>
-                                <TableCell>
+                                {/* <TableCell>
                                     {user?.game.reduce(
                                         (maxScore: number, game: GameType) => (game.score > maxScore ? game.score : maxScore),
                                         0
                                     )}
-                                </TableCell>
-                                <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
+                                </TableCell> */}
+                                {user?.game.map((game: GameType, index: number) => (
+                                    <TableRow key={index}>
+                                        <TableCell >
+                                            {game.level}
+                                        </TableCell>
+                                        <TableCell >
+
+                                        </TableCell>
+                                        <TableCell >
+
+                                            score {game.score} out of {game.questionsLength}
+                                        </TableCell>
+                                    </TableRow>
+                                ))
+                                }
                             </TableRow>
                         ))}
                     </TableBody>

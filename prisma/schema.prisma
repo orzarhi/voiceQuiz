@@ -62,10 +62,11 @@ model VerificationToken {
 }
 
 model Game {
-  id     String   @id @default(auto()) @map("_id") @db.ObjectId
-  score  Int      @default(0)
-  level  String?
-  date   DateTime
-  user   User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId String   @db.ObjectId
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  score           Int      @default(0)
+  questionsLength Int      @default(0)
+  level           String?
+  date            DateTime
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId          String   @db.ObjectId
 }

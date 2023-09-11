@@ -14,10 +14,9 @@ import { User } from "next-auth";
 import { signOut } from "next-auth/react";
 import Link from 'next/link';
 import { FC } from "react";
+import { ModeToggle } from "./ModeToggle";
 import { UserAvatar } from "./UserAvatar";
 import { Button } from "./ui/Button";
-import { ModeToggle } from "./ModeToggle";
-import { useToast } from "@/hooks/use-toast";
 
 interface UserAccountNavProps {
   user: Pick<User, 'name' | 'image' | 'email' | 'isAdmin'>
@@ -26,17 +25,8 @@ interface UserAccountNavProps {
 export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
   const { level: levelStore, setLevel } = useLevelStore();
   const { dropDown, setDropDown } = useDropDownStore()
-  const { toast } = useToast()
 
-  const changeLevel = (level: LevelType) => {
-    setLevel(level)
-    toast({
-      description: 'It`s still in development 🔨, Sorry!',
-      variant: 'destructive'
-
-
-    })
-  }
+  const changeLevel = (level: LevelType) => setLevel(level)
 
   return (
     <DropdownMenu onOpenChange={() => setDropDown(!dropDown)}>

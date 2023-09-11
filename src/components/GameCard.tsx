@@ -1,16 +1,20 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 'use client'
 
 import { Loading } from '@/components/Loading'
-import { Questions } from '@/data/questions'
+import { EasyQuestions, HardQuestions, MediumQuestions } from '@/data/questions'
 import { useGame } from '@/hooks/use-game'
-import { delay, textToSpeech } from '@/lib/utils'
+import { delay, randomAllQuestions, textToSpeech } from '@/lib/utils'
 import { GameRequest } from '@/lib/validators/game'
 import { useDropDownStore, useLevelStore } from '@/store'
+import { CurrentGameType } from '@/types/game'
+import { AnswerType, QuestionType } from '@/types/question'
+import { motion } from "framer-motion"
 import { RotateCcw } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
-import { motion } from "framer-motion";
+import { Label } from './ui/Label'
 
 export const GameCard = ({ }) => {
     const { dropDown } = useDropDownStore()
@@ -18,12 +22,28 @@ export const GameCard = ({ }) => {
 
     const { mutate: result, isLoading } = useGame()
 
-    const [game, setGame] = useState({
+    const [questions, setQuestions] = useState<QuestionType | any>(EasyQuestions)
+
+    const [game, setGame] = useState<CurrentGameType>({
         currentQuestion: 0,
         score: 0,
         endGame: false,
-        changeBackground: false
+        changeBackground: false,
     });
+
+    useEffect(() => {
+        handleNewGame()
+
+        if (level === 'Easy') {
+            setQuestions(EasyQuestions)
+        } else if (level === 'Medium') {
+            setQuestions(MediumQuestions)
+        }
+        else if (level === 'Hard') {
+            setQuestions(HardQuestions)
+        }
+    }, [level])
+
 
     const handleAnswerClick = async (isCorrect: boolean) => {
         setGame({ ...game, changeBackground: true })
@@ -38,7 +58,7 @@ export const GameCard = ({ }) => {
         }
         const nextQuestion = game.currentQuestion + 1;
 
-        if (nextQuestion < Questions.length) {
+        if (nextQuestion < questions.length) {
             setGame({
                 ...game,
                 changeBackground: false,
@@ -49,6 +69,7 @@ export const GameCard = ({ }) => {
             const payload: GameRequest = {
                 score: game.score,
                 level,
+                questionsLength: questions.length,
                 date: new Date()
             }
 
@@ -57,7 +78,10 @@ export const GameCard = ({ }) => {
         }
     };
 
-    const handleNewGame = () => setGame({ ...game, currentQuestion: 0, score: 0, endGame: false, })
+    const handleNewGame = () => {
+        randomAllQuestions()
+        setGame({ ...game, currentQuestion: 0, score: 0, endGame: false })
+    }
 
     if (isLoading) return <Loading />
 
@@ -81,15 +105,15 @@ export const GameCard = ({ }) => {
                         <CardHeader className="space-y-1 text-center">
                             <CardTitle
                                 className="mx-auto text-2xl cursor-pointer"
-                                onClick={() => textToSpeech(Questions[game.currentQuestion].questionText)}>
-                                {Questions[game.currentQuestion].questionText} 🔊
+                                onClick={() => textToSpeech(questions[game.currentQuestion].questionText)}>
+                                {questions[game.currentQuestion].questionText} 🔊
                             </CardTitle>
                             <CardDescription className='text-base'>
-                                Choose the correct answer in the past.
+                                {level === 'Medium' ? ' Choose the correct answer in the past.' : 'Choose the correct answer.'}
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="grid w-full gap-5 place-items-center mx-auto">
-                            {Questions[game.currentQuestion].answerOptions.map((answerOption, index) => (
+                            {questions[game.currentQuestion].answerOptions.map((answerOption: AnswerType, index: number) => (
                                 <div key={index} className='w-full'>
                                     <Button
                                         className={`w-full ${game.changeBackground && answerOption.isCorrect ? 'bg-green-500' : null}`}
@@ -101,12 +125,12 @@ export const GameCard = ({ }) => {
                             ))}
                         </CardContent>
                         <CardFooter className='w-full flex justify-center mt-5'>
-                            <span>Questions: <span className='font-bold'>{game.currentQuestion + 1}</span>/{Questions.length}</span>
+                            <span>Questions: <span className='font-bold'>{game.currentQuestion + 1}</span>/{questions.length}</span>
                         </CardFooter>
                     </Card >
                 ) : (
-                    <div className='flex flex-col justify-center items-center h-[60vh] space-y-5 p-10'>
-                        <h2 className='text-xl'>You scored {game.score} out of {Questions.length}.</h2>
+                    <div className='flex flex-col justify-center items-center h-[60vh] space-y-4 p-5 sm:p-10'>
+                        <Label className='text-base sm:text-xl'>You scored {game.score} out of {questions.length} in the {level.toLocaleLowerCase()} level.</Label>
                         <Button className='w-full md:w-2/5' variant='outline' onClick={handleNewGame}>New Game</Button>
                     </div>
                 )}

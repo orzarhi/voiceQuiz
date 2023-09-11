@@ -1,6 +1,8 @@
 import { ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { format } from 'date-fns';
+import { QuestionType } from '@/types/question';
+import { EasyQuestions, HardQuestions, MediumQuestions } from '@/data/questions';
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
@@ -23,3 +25,12 @@ export const formatDate = (date: Date, newFormat?: string) => {
 
   return date ? format(new Date(date), fm) : '';
 };
+
+const randomQuestions = (questions: QuestionType[]) => questions.sort(() => Math.random() - 0.5)
+
+export const randomAllQuestions = () => {
+  randomQuestions(EasyQuestions)
+  randomQuestions(MediumQuestions)
+  randomQuestions(HardQuestions)
+}
+

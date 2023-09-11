@@ -14,6 +14,7 @@ export async function GET() {
                     select: {
                         score: true,
                         level: true,
+                        questionsLength: true,
                         date: true,
                     }
                 },

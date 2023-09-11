@@ -1,4 +1,206 @@
-export const Questions = [
+export const EasyQuestions = [
+    {
+        questionText: "Family",
+        answerOptions: [
+            { answerText: "חבר", isCorrect: false },
+            { answerText: "זר", isCorrect: false },
+            { answerText: "משפחה", isCorrect: true },
+            { answerText: "ילד", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Friendship",
+        answerOptions: [
+            { answerText: "משפחה", isCorrect: false },
+            { answerText: "אהבה", isCorrect: false },
+            { answerText: "ידידות", isCorrect: true },
+            { answerText: "קשר", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Computer",
+        answerOptions: [
+            { answerText: "מסך", isCorrect: false },
+            { answerText: "מקלדת", isCorrect: false },
+            { answerText: "מחשב", isCorrect: true },
+            { answerText: "מצלמה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Weather",
+        answerOptions: [
+            { answerText: "חום", isCorrect: false },
+            { answerText: "מזג אוויר", isCorrect: true },
+            { answerText: "גשם", isCorrect: false },
+            { answerText: "סערה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Food",
+        answerOptions: [
+            { answerText: "משקאות", isCorrect: false },
+            { answerText: "פירות", isCorrect: false },
+            { answerText: "ירקות", isCorrect: false },
+            { answerText: "אוכל", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Happiness",
+        answerOptions: [
+            { answerText: "עצב", isCorrect: false },
+            { answerText: "רגשות", isCorrect: false },
+            { answerText: "אושר", isCorrect: true },
+            { answerText: "פחד", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Nature",
+        answerOptions: [
+            { answerText: "עיר", isCorrect: false },
+            { answerText: "ים", isCorrect: false },
+            { answerText: "טבע", isCorrect: true },
+            { answerText: "הר", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Music",
+        answerOptions: [
+            { answerText: "ספורט", isCorrect: false },
+            { answerText: "תרבות", isCorrect: false },
+            { answerText: "אוכל", isCorrect: false },
+            { answerText: "מוזיקה", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "School",
+        answerOptions: [
+            { answerText: "בית", isCorrect: false },
+            { answerText: "עבודה", isCorrect: false },
+            { answerText: "בית חולים", isCorrect: false },
+            { answerText: "בית ספר", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Book",
+        answerOptions: [
+            { answerText: "עט", isCorrect: false },
+            { answerText: "נייר", isCorrect: false },
+            { answerText: "ספר", isCorrect: true },
+            { answerText: "מחברת", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Pen",
+        answerOptions: [
+            { answerText: "ספר", isCorrect: false },
+            { answerText: "עט", isCorrect: true },
+            { answerText: "נייר", isCorrect: false },
+            { answerText: "מחברת", isCorrect: false },
+        ],
+    },
+
+    {
+        questionText: "Love",
+        answerOptions: [
+            { answerText: "שנאה", isCorrect: false },
+            { answerText: "אמת", isCorrect: false },
+            { answerText: "אהבה", isCorrect: true },
+            { answerText: "כסף", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Work",
+        answerOptions: [
+            { answerText: "בית", isCorrect: false },
+            { answerText: "זמן", isCorrect: false },
+            { answerText: "עבודה", isCorrect: true },
+            { answerText: "פנאי", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Dream",
+        answerOptions: [
+            { answerText: "מציאות", isCorrect: false },
+            { answerText: "יום", isCorrect: false },
+            { answerText: "לילה", isCorrect: false },
+            { answerText: "חלום", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Travel",
+        answerOptions: [
+            { answerText: "מסע", isCorrect: false },
+            { answerText: "מטוס", isCorrect: false },
+            { answerText: "נסיעה", isCorrect: true },
+            { answerText: "רכבת", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Time",
+        answerOptions: [
+            { answerText: "מקום", isCorrect: false },
+            { answerText: "זמן", isCorrect: true },
+            { answerText: "כסף", isCorrect: false },
+            { answerText: "אוכל", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Money",
+        answerOptions: [
+            { answerText: "זמן", isCorrect: false },
+            { answerText: "מקום", isCorrect: false },
+            { answerText: "אוכל", isCorrect: false },
+            { answerText: "כסף", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Rain",
+        answerOptions: [
+            { answerText: "שמש", isCorrect: false },
+            { answerText: "רוח", isCorrect: false },
+            { answerText: "גשם", isCorrect: true },
+            { answerText: "חום", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "House",
+        answerOptions: [
+            { answerText: "בית", isCorrect: true },
+            { answerText: "דירה", isCorrect: false },
+            { answerText: "סוכה", isCorrect: false },
+            { answerText: "גג", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Tree",
+        answerOptions: [
+            { answerText: "עץ", isCorrect: true },
+            { answerText: "פרח", isCorrect: false },
+            { answerText: "דשא", isCorrect: false },
+            { answerText: "גן", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Shoes",
+        answerOptions: [
+            { answerText: "נעליים", isCorrect: true },
+            { answerText: "חולצה", isCorrect: false },
+            { answerText: "מכנסיים", isCorrect: false },
+            { answerText: "חצאית", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Car",
+        answerOptions: [
+            { answerText: "אופניים", isCorrect: false },
+            { answerText: "אופנוע", isCorrect: false },
+            { answerText: "מכונית", isCorrect: true },
+            { answerText: "מטוס", isCorrect: false },
+        ],
+    },
+]
+
+export const MediumQuestions = [
     {
         questionText: "Eat",
         answerOptions: [
@@ -240,6 +442,117 @@ export const Questions = [
             { answerText: "Catching", isCorrect: false },
             { answerText: "Caught", isCorrect: true },
             { answerText: "Catches", isCorrect: false },
+        ],
+    },
+];
+
+export const HardQuestions = [
+    {
+        questionText: "Technology",
+        answerOptions: [
+            { answerText: "מדע", isCorrect: false },
+            { answerText: "מחשבים", isCorrect: false },
+            { answerText: "תוכנה", isCorrect: false },
+            { answerText: "טכנולוגיה", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Environment",
+        answerOptions: [
+            { answerText: "אקולוגיה", isCorrect: false },
+            { answerText: "טבע", isCorrect: false },
+            { answerText: "סביבה", isCorrect: true },
+            { answerText: "חידושים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Science",
+        answerOptions: [
+            { answerText: "גרפיקה", isCorrect: false },
+            { answerText: "ביולוגיה", isCorrect: false },
+            { answerText: "מדע", isCorrect: true },
+            { answerText: "פיזיקה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Globalization",
+        answerOptions: [
+            { answerText: "עולם", isCorrect: false },
+            { answerText: "תרבות", isCorrect: false },
+            { answerText: "גלובליזציה", isCorrect: true },
+            { answerText: "כלכלה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Artificial Intelligence",
+        answerOptions: [
+            { answerText: "אלגוריתם", isCorrect: false },
+            { answerText: "בינה מלאכותית", isCorrect: true },
+            { answerText: "מתמקד בנתונים", isCorrect: false },
+            { answerText: "טכנולוגיה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Economy",
+        answerOptions: [
+            { answerText: "כלכלה", isCorrect: true },
+            { answerText: "פיננסים", isCorrect: false },
+            { answerText: "שוק ההון", isCorrect: false },
+            { answerText: "מיסים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Politics",
+        answerOptions: [
+            { answerText: "ממשלה", isCorrect: false },
+            { answerText: "דמוקרטיה", isCorrect: false },
+            { answerText: "שלטון", isCorrect: false },
+            { answerText: "פוליטיקה", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Medicine",
+        answerOptions: [
+            { answerText: "ברחוב", isCorrect: false },
+            { answerText: "בית חולים", isCorrect: false },
+            { answerText: "רפואה", isCorrect: true },
+            { answerText: "חולצה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Space",
+        answerOptions: [
+            { answerText: "כוכבים", isCorrect: false },
+            { answerText: "כדור הארץ", isCorrect: false },
+            { answerText: "חלל", isCorrect: true },
+            { answerText: "גלקסיה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Philosophy",
+        answerOptions: [
+            { answerText: "חשיבה", isCorrect: false },
+            { answerText: "פילוסופיה", isCorrect: true },
+            { answerText: "אידיאולוגיה", isCorrect: false },
+            { answerText: "תחושות", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "History",
+        answerOptions: [
+            { answerText: "זמן", isCorrect: false },
+            { answerText: "ארכיאולוגיה", isCorrect: false },
+            { answerText: "היסטוריה", isCorrect: true },
+            { answerText: "ספרים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Culture",
+        answerOptions: [
+            { answerText: "אמנות", isCorrect: false },
+            { answerText: "תרבות", isCorrect: true },
+            { answerText: "פולקלור", isCorrect: false },
+            { answerText: "תקשורת", isCorrect: false },
         ],
     },
 ];

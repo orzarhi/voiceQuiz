@@ -9,8 +9,8 @@ export const useGame = () => {
 
     return useMutation({
         mutationFn: async (inputs: GameType) => {
-            const { score, level, date } = inputs;
-            const payload: GamePayload = { score, level, date }
+            const { score, level, questionsLength, date } = inputs;
+            const payload: GamePayload = { score, level, questionsLength: questionsLength ?? 0, date }
 
             const { data } = await axios.post('/api/game', payload);
             return data;

@@ -10,13 +10,15 @@ export async function POST(req: Request) {
             return new Response("Unauthorized", { status: 401 });
         }
         const body = await req.json();
-        const { score, level, date } = gameValidator.parse(body);
+        const { score, level, date, questionsLength } = gameValidator.parse(body);
+        console.log("🚀  questionsLength:", questionsLength)
 
         await db.game.create({
             data: {
                 score,
                 level,
                 date,
+                questionsLength,
                 userId: session?.user?.id,
             },
         });
