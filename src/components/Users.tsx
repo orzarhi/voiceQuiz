@@ -1,27 +1,19 @@
 'use client'
 
+import { formatDate } from '@/lib/utils';
 import { useDropDownStore } from '@/store';
 import { GameType } from '@/types/game';
 import { UserType } from '@/types/user';
+import { motion } from "framer-motion";
 import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
-import { formatDate } from '@/lib/utils';
-import { useUsers } from '@/hooks/use-users';
-import { Loading } from '@/components/Loading';
-import { motion } from "framer-motion";
 
 interface UsersProps {
     users: UserType[]
 }
 
 export const Users: FC<UsersProps> = ({ users }) => {
-    // const { data: users, isLoading, isFetching } = useUsers()
     const { dropDown } = useDropDownStore()
-
-    // if (isLoading) return <Loading />
-
-    // i want to show game object in the table
-
 
     return (
         <>
@@ -58,23 +50,16 @@ export const Users: FC<UsersProps> = ({ users }) => {
                                 <TableCell>{formatDate(user.createdAt)}</TableCell>
                                 <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                                 <TableCell>{user?.game.length}</TableCell>
-                                {/* <TableCell>
-                                    {user?.game.reduce(
-                                        (maxScore: number, game: GameType) => (game.score > maxScore ? game.score : maxScore),
-                                        0
-                                    )}
-                                </TableCell> */}
                                 {user?.game.map((game: GameType, index: number) => (
-                                    <TableRow key={index}>
-                                        <TableCell >
-                                            {game.level}
+                                    <TableRow key={index} >
+                                        <TableCell className='text-xs'>
+                                            {index + 1}. {game.level}
                                         </TableCell>
-                                        <TableCell >
-
-                                        </TableCell>
-                                        <TableCell >
-
+                                        <TableCell className='text-xs'>
                                             score {game.score} out of {game.questionsLength}
+                                        </TableCell>
+                                        <TableCell className='text-xs'>
+                                            {formatDate(game.date)}
                                         </TableCell>
                                     </TableRow>
                                 ))
