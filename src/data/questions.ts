@@ -202,6 +202,117 @@ export const EasyQuestions = [
 
 export const MediumQuestions = [
     {
+        questionText: "Technology",
+        answerOptions: [
+            { answerText: "מדע", isCorrect: false },
+            { answerText: "מחשבים", isCorrect: false },
+            { answerText: "תוכנה", isCorrect: false },
+            { answerText: "טכנולוגיה", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Environment",
+        answerOptions: [
+            { answerText: "אקולוגיה", isCorrect: false },
+            { answerText: "טבע", isCorrect: false },
+            { answerText: "סביבה", isCorrect: true },
+            { answerText: "חידושים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Science",
+        answerOptions: [
+            { answerText: "גרפיקה", isCorrect: false },
+            { answerText: "ביולוגיה", isCorrect: false },
+            { answerText: "מדע", isCorrect: true },
+            { answerText: "פיזיקה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Globalization",
+        answerOptions: [
+            { answerText: "עולם", isCorrect: false },
+            { answerText: "תרבות", isCorrect: false },
+            { answerText: "גלובליזציה", isCorrect: true },
+            { answerText: "כלכלה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Artificial Intelligence",
+        answerOptions: [
+            { answerText: "אלגוריתם", isCorrect: false },
+            { answerText: "בינה מלאכותית", isCorrect: true },
+            { answerText: "מתמקד בנתונים", isCorrect: false },
+            { answerText: "טכנולוגיה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Economy",
+        answerOptions: [
+            { answerText: "כלכלה", isCorrect: true },
+            { answerText: "פיננסים", isCorrect: false },
+            { answerText: "שוק ההון", isCorrect: false },
+            { answerText: "מיסים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Politics",
+        answerOptions: [
+            { answerText: "ממשלה", isCorrect: false },
+            { answerText: "דמוקרטיה", isCorrect: false },
+            { answerText: "שלטון", isCorrect: false },
+            { answerText: "פוליטיקה", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Medicine",
+        answerOptions: [
+            { answerText: "ברחוב", isCorrect: false },
+            { answerText: "בית חולים", isCorrect: false },
+            { answerText: "רפואה", isCorrect: true },
+            { answerText: "חולצה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Space",
+        answerOptions: [
+            { answerText: "כוכבים", isCorrect: false },
+            { answerText: "כדור הארץ", isCorrect: false },
+            { answerText: "חלל", isCorrect: true },
+            { answerText: "גלקסיה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Philosophy",
+        answerOptions: [
+            { answerText: "חשיבה", isCorrect: false },
+            { answerText: "פילוסופיה", isCorrect: true },
+            { answerText: "אידיאולוגיה", isCorrect: false },
+            { answerText: "תחושות", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "History",
+        answerOptions: [
+            { answerText: "זמן", isCorrect: false },
+            { answerText: "ארכיאולוגיה", isCorrect: false },
+            { answerText: "היסטוריה", isCorrect: true },
+            { answerText: "ספרים", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Culture",
+        answerOptions: [
+            { answerText: "אמנות", isCorrect: false },
+            { answerText: "תרבות", isCorrect: true },
+            { answerText: "פולקלור", isCorrect: false },
+            { answerText: "תקשורת", isCorrect: false },
+        ],
+    },
+];
+
+export const HardQuestions = [
+    {
         questionText: "Eat",
         answerOptions: [
             { answerText: "Eaten", isCorrect: false },
@@ -446,113 +557,3 @@ export const MediumQuestions = [
     },
 ];
 
-export const HardQuestions = [
-    {
-        questionText: "Technology",
-        answerOptions: [
-            { answerText: "מדע", isCorrect: false },
-            { answerText: "מחשבים", isCorrect: false },
-            { answerText: "תוכנה", isCorrect: false },
-            { answerText: "טכנולוגיה", isCorrect: true },
-        ],
-    },
-    {
-        questionText: "Environment",
-        answerOptions: [
-            { answerText: "אקולוגיה", isCorrect: false },
-            { answerText: "טבע", isCorrect: false },
-            { answerText: "סביבה", isCorrect: true },
-            { answerText: "חידושים", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Science",
-        answerOptions: [
-            { answerText: "גרפיקה", isCorrect: false },
-            { answerText: "ביולוגיה", isCorrect: false },
-            { answerText: "מדע", isCorrect: true },
-            { answerText: "פיזיקה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Globalization",
-        answerOptions: [
-            { answerText: "עולם", isCorrect: false },
-            { answerText: "תרבות", isCorrect: false },
-            { answerText: "גלובליזציה", isCorrect: true },
-            { answerText: "כלכלה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Artificial Intelligence",
-        answerOptions: [
-            { answerText: "אלגוריתם", isCorrect: false },
-            { answerText: "בינה מלאכותית", isCorrect: true },
-            { answerText: "מתמקד בנתונים", isCorrect: false },
-            { answerText: "טכנולוגיה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Economy",
-        answerOptions: [
-            { answerText: "כלכלה", isCorrect: true },
-            { answerText: "פיננסים", isCorrect: false },
-            { answerText: "שוק ההון", isCorrect: false },
-            { answerText: "מיסים", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Politics",
-        answerOptions: [
-            { answerText: "ממשלה", isCorrect: false },
-            { answerText: "דמוקרטיה", isCorrect: false },
-            { answerText: "שלטון", isCorrect: false },
-            { answerText: "פוליטיקה", isCorrect: true },
-        ],
-    },
-    {
-        questionText: "Medicine",
-        answerOptions: [
-            { answerText: "ברחוב", isCorrect: false },
-            { answerText: "בית חולים", isCorrect: false },
-            { answerText: "רפואה", isCorrect: true },
-            { answerText: "חולצה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Space",
-        answerOptions: [
-            { answerText: "כוכבים", isCorrect: false },
-            { answerText: "כדור הארץ", isCorrect: false },
-            { answerText: "חלל", isCorrect: true },
-            { answerText: "גלקסיה", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Philosophy",
-        answerOptions: [
-            { answerText: "חשיבה", isCorrect: false },
-            { answerText: "פילוסופיה", isCorrect: true },
-            { answerText: "אידיאולוגיה", isCorrect: false },
-            { answerText: "תחושות", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "History",
-        answerOptions: [
-            { answerText: "זמן", isCorrect: false },
-            { answerText: "ארכיאולוגיה", isCorrect: false },
-            { answerText: "היסטוריה", isCorrect: true },
-            { answerText: "ספרים", isCorrect: false },
-        ],
-    },
-    {
-        questionText: "Culture",
-        answerOptions: [
-            { answerText: "אמנות", isCorrect: false },
-            { answerText: "תרבות", isCorrect: true },
-            { answerText: "פולקלור", isCorrect: false },
-            { answerText: "תקשורת", isCorrect: false },
-        ],
-    },
-];

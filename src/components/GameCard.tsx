@@ -18,7 +18,7 @@ import { Label } from './ui/Label'
 
 export const GameCard = ({ }) => {
     const { dropDown } = useDropDownStore()
-    const { level } = useLevelStore()
+    const { level, setLevel } = useLevelStore()
 
     const { mutate: result, isLoading } = useGame()
 
@@ -30,6 +30,9 @@ export const GameCard = ({ }) => {
         endGame: false,
         changeBackground: false,
     });
+
+    useEffect(() => { setLevel('Easy') }, [])
+
 
     useEffect(() => {
         handleNewGame()
