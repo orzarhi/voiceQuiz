@@ -112,7 +112,7 @@ export const GameCard = ({ }) => {
                                 {questions[game.currentQuestion].questionText} 🔊
                             </CardTitle>
                             <CardDescription className='text-base'>
-                                {level === 'Medium' ? ' Choose the correct answer in the past.' : 'Choose the correct answer.'}
+                                {level === 'Hard' ? ' Choose the correct answer in the past.' : 'Choose the correct answer.'}
                             </CardDescription>
                         </CardHeader>
                         <CardContent className="grid w-full gap-5 place-items-center mx-auto">
