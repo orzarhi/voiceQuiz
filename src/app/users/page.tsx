@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 
 
 export const dataUsers = async () => {
-    const res = await fetch(`${domainConfig.url}/api/users`, { cache: 'no-store' })
+    const res = await fetch(`https://quiz-six-jade.vercel.app/api/users`, { cache: 'no-store' })
     const data = await res.json()
 
     return data;
