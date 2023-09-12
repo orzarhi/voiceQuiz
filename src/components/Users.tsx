@@ -17,7 +17,6 @@ export const Users: FC<UsersProps> = ({ users }) => {
 
     return (
         <>
-
             <motion.div
                 className="box"
                 initial={{ opacity: 0, scale: 0.5 }}

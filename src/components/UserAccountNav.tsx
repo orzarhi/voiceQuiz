@@ -26,7 +26,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
   const { level: levelStore, setLevel } = useLevelStore();
   const { dropDown, setDropDown } = useDropDownStore()
 
-  const changeLevel = (level: LevelType) => setLevel(level)
+  const changeLevel = (id: string) => setLevel(id as LevelType)
 
   return (
     <DropdownMenu onOpenChange={() => setDropDown(!dropDown)}>
@@ -53,8 +53,8 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
         </div>
 
         <div className='flex items-center justify-center gap-2 p-2 '>
-          {LEVELS?.map((level) => (
-            <DropdownMenuItem asChild className="drop-down-menu text-zinc-500/70 dark:text-zinc-200/70" key={level.id}>
+          {LEVELS?.map((level, index: number) => (
+            <DropdownMenuItem asChild className="drop-down-menu text-zinc-500/70 dark:text-zinc-200/70" key={index}>
               <Button
                 size='sm'
                 className={`w-16 rounded-lg ${level.id === levelStore ? "font-bold tracking-widest text-black dark:text-white p-5" : null}`}
