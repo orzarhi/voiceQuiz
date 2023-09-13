@@ -5,10 +5,9 @@ import { REVALIDATE } from '@/config/revalidate';
 import { getAuthSession } from '@/lib/auth';
 import { redirect } from 'next/navigation';
 
-const dataUsers = async () => {
-    return await (await fetch(`${domainConfig.url}/api/users`, { next: { revalidate: REVALIDATE } })).json()
-}
+export const dynamic = 'force-dynamic'
 
+const dataUsers = async () => await (await fetch(`${domainConfig.url}/api/users`, { cache: 'no-store' })).json()
 
 export default async function page({ }) {
     const session = await getAuthSession();
