@@ -26,7 +26,7 @@ export default async function RootLayout({
         <Providers>
           <main className='container h-full px-1.5 pt-8 mx-auto max-w-5xl'>
             {/* @ts-ignore */}
-            <Header session={session} />
+            {session ? <Header session={session} /> : null}
             {children}
           </main>
         </Providers>
