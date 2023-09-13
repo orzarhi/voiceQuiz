@@ -61,8 +61,7 @@ export const Users: FC<UsersProps> = ({ users }) => {
                                             {formatDate(game.date)}
                                         </TableCell>
                                     </TableRow>
-                                ))
-                                }
+                                ))}
                             </TableRow>
                         ))}
                     </TableBody>
