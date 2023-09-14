@@ -9,15 +9,15 @@ export default async function Home() {
 
   if (!session) redirect('/sign-in');
 
-  const easyQuestions = await questions.getStoredEasyQuestions();
-  const mediumQuestions = await questions.getStoredMediumQuestions();
-  const hardQuestions = await questions.getStoredHardQuestions();
+  // const easyQuestions = await questions.getStoredEasyQuestions();
+  // const mediumQuestions = await questions.getStoredMediumQuestions();
+  // const hardQuestions = await questions.getStoredHardQuestions();
 
   return (
     <GameCard
-      easyQuestions={easyQuestions}
-      mediumQuestions={mediumQuestions}
-      hardQuestions={hardQuestions}
+    // easyQuestions={easyQuestions}
+    // mediumQuestions={mediumQuestions}
+    // hardQuestions={hardQuestions}
     />
   )
 }

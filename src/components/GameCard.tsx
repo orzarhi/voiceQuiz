@@ -17,12 +17,12 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Label } from './ui/Label'
 
 interface GameCardProps {
-    easyQuestions: QuestionType[]
-    mediumQuestions: QuestionType[]
-    hardQuestions: QuestionType[]
+    // easyQuestions: QuestionType[]
+    // mediumQuestions: QuestionType[]
+    // hardQuestions: QuestionType[]
 }
 
-export const GameCard: FC<GameCardProps> = ({ easyQuestions, mediumQuestions, hardQuestions }) => {
+export const GameCard: FC<GameCardProps> = ({ }) => {
     const { dropDown } = useDropDownStore()
     const { level, setLevel } = useLevelStore()
 
@@ -37,7 +37,10 @@ export const GameCard: FC<GameCardProps> = ({ easyQuestions, mediumQuestions, ha
         changeBackground: false,
     });
 
-    useEffect(() => { setLevel('Easy') }, [])
+    useEffect(() => {
+        setLevel('Easy')
+
+    }, [])
 
     useEffect(() => {
         handleNewGame()
