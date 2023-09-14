@@ -37,10 +37,7 @@ export const GameCard: FC<GameCardProps> = ({ }) => {
         changeBackground: false,
     });
 
-    useEffect(() => {
-        setLevel('Easy')
-
-    }, [])
+    useEffect(() => { setLevel('Easy') }, [])
 
     useEffect(() => {
         handleNewGame()
