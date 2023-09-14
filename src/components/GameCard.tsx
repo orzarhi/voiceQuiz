@@ -3,6 +3,7 @@
 
 import { Loading } from '@/components/Loading'
 import { useGame } from '@/hooks/use-game'
+import { EasyQuestions, MediumQuestions, HardQuestions } from '@/constants/questions'
 import { delay, randomAllQuestions, textToSpeech } from '@/lib/utils'
 import { GameRequest } from '@/lib/validators/game'
 import { useDropDownStore, useLevelStore } from '@/store'
@@ -27,7 +28,7 @@ export const GameCard: FC<GameCardProps> = ({ easyQuestions, mediumQuestions, ha
 
     const { mutate: result, isLoading } = useGame()
 
-    const [questions, setQuestions] = useState<QuestionType | any>(easyQuestions)
+    const [questions, setQuestions] = useState<QuestionType | any>(EasyQuestions)
 
     const [game, setGame] = useState<CurrentGameType>({
         currentQuestion: 0,
@@ -42,12 +43,12 @@ export const GameCard: FC<GameCardProps> = ({ easyQuestions, mediumQuestions, ha
         handleNewGame()
 
         if (level === 'Easy') {
-            setQuestions(easyQuestions)
+            setQuestions(EasyQuestions)
         } else if (level === 'Medium') {
-            setQuestions(mediumQuestions)
+            setQuestions(MediumQuestions)
         }
         else if (level === 'Hard') {
-            setQuestions(hardQuestions)
+            setQuestions(HardQuestions)
         }
 
     }, [level])
