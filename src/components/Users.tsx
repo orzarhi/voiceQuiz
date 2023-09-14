@@ -6,8 +6,14 @@ import { UserType } from '@/types/user';
 import { motion } from "framer-motion";
 import { Loading } from './Loading';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export const Users = ({ }) => {
+    const { data: session } = useSession()
+
+    if (!session?.user?.isAdmin) redirect('/')
+
     const { dropDown } = useDropDownStore()
 
     const { data: users, isLoading } = useUsers();
