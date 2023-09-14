@@ -2,7 +2,6 @@
 'use client'
 
 import { Loading } from '@/components/Loading'
-import { EasyQuestions, HardQuestions, MediumQuestions } from '@/data/questions'
 import { useGame } from '@/hooks/use-game'
 import { delay, randomAllQuestions, textToSpeech } from '@/lib/utils'
 import { GameRequest } from '@/lib/validators/game'
@@ -11,18 +10,24 @@ import { CurrentGameType } from '@/types/game'
 import { AnswerType, QuestionType } from '@/types/question'
 import { motion } from "framer-motion"
 import { RotateCcw } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Button } from './ui/Button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/Card'
 import { Label } from './ui/Label'
 
-export const GameCard = ({ }) => {
+interface GameCardProps {
+    easyQuestions: QuestionType[]
+    mediumQuestions: QuestionType[]
+    hardQuestions: QuestionType[]
+}
+
+export const GameCard: FC<GameCardProps> = ({ easyQuestions, mediumQuestions, hardQuestions }) => {
     const { dropDown } = useDropDownStore()
     const { level, setLevel } = useLevelStore()
 
     const { mutate: result, isLoading } = useGame()
 
-    const [questions, setQuestions] = useState<QuestionType | any>(EasyQuestions)
+    const [questions, setQuestions] = useState<QuestionType | any>(easyQuestions)
 
     const [game, setGame] = useState<CurrentGameType>({
         currentQuestion: 0,
@@ -33,17 +38,16 @@ export const GameCard = ({ }) => {
 
     useEffect(() => { setLevel('Easy') }, [])
 
-
     useEffect(() => {
         handleNewGame()
 
         if (level === 'Easy') {
-            setQuestions(EasyQuestions)
+            setQuestions(easyQuestions)
         } else if (level === 'Medium') {
-            setQuestions(MediumQuestions)
+            setQuestions(mediumQuestions)
         }
         else if (level === 'Hard') {
-            setQuestions(HardQuestions)
+            setQuestions(hardQuestions)
         }
 
     }, [level])

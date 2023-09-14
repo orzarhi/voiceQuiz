@@ -1,8 +1,8 @@
-import { ClassValue, clsx } from 'clsx'
-import { twMerge } from 'tailwind-merge'
-import { format } from 'date-fns';
+import { EasyQuestions, HardQuestions, MediumQuestions } from '@/constants/questions';
 import { QuestionType } from '@/types/question';
-import { EasyQuestions, HardQuestions, MediumQuestions } from '@/data/questions';
+import { ClassValue, clsx } from 'clsx';
+import { format } from 'date-fns';
+import { twMerge } from 'tailwind-merge';
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs))
 
