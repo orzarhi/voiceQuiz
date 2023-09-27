@@ -7,6 +7,10 @@ export const useUsers = () => {
 
     return useQuery({
         queryKey: ['users'],
+        refetchOnWindowFocus: true,
+        staleTime: 0,
+        cacheTime: 0,
+        refetchInterval: 0,
         queryFn: async () => {
             const { data } = await axios.get('/api/users');
             return data;

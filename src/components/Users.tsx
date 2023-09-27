@@ -8,13 +8,19 @@ import { motion } from "framer-motion";
 
 import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
+import { useUsers } from '@/hooks/use-users';
+import { Loading } from './Loading';
 
 interface UsersProps {
-    users: UserType[]
+    // users: UserType[]
 }
 
-export const Users: FC<UsersProps> = ({ users }) => {
+export const Users: FC<UsersProps> = ({ }) => {
     const { dropDown } = useDropDownStore()
+
+    const { data: users, isLoading } = useUsers()
+
+    if (isLoading) return <Loading />
 
     return (
         <motion.div
@@ -23,7 +29,7 @@ export const Users: FC<UsersProps> = ({ users }) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{
                 duration: 0.8,
-                delay: 0.2,
+                delay: 0.1,
                 ease: [0, 0.71, 0.2, 1.01]
             }}
         >
