@@ -5,8 +5,7 @@ import { useDropDownStore } from '@/store';
 import { GameType } from '@/types/game';
 import { UserType } from '@/types/user';
 import { motion } from "framer-motion";
-import { useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+
 import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 
@@ -51,7 +50,7 @@ export const Users: FC<UsersProps> = ({ users }) => {
                             <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                             <TableCell>{user?.game.length}</TableCell>
                             {user?.game.map((game: GameType, index: number) => (
-                                <TableRow key={index}>
+                                <TableRow key={game.id}>
                                     <TableCell className='text-xs'>
                                         {index + 1}. {game.level}
                                     </TableCell>
