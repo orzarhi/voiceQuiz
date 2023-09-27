@@ -15,10 +15,6 @@ interface UsersProps {
 export const Users: FC<UsersProps> = ({ users }) => {
     const { dropDown } = useDropDownStore()
 
-    // const { data: users, isFetched, isFetching } = useUsers()
-
-    // if userId equals to user.id then show the game
-
 
     return (
         <motion.div

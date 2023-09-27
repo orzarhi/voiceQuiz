@@ -18,7 +18,21 @@ export default async function page({ }) {
     if (!session?.user.isAdmin) redirect('/');
 
     const users = await getData()
+    console.log("🚀 users:", users)
 
-    return <Users users={users} />
+    // return <Users users={users} />
+    return (
+        <div>
+            <h1>Users</h1>
+            <ul>
+                {users.map((user: any) => (
+                    <li key={user.id}>
+                        <h2>{user.name}</h2>
+                        <p>{user.game.length}</p>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
 }
 
