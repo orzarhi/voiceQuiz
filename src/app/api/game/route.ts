@@ -11,7 +11,6 @@ export async function POST(req: Request) {
         }
         const body = await req.json();
         const { score, level, date, questionsLength } = gameValidator.parse(body);
-        console.log("🚀  questionsLength:", questionsLength)
 
         await db.game.create({
             data: {

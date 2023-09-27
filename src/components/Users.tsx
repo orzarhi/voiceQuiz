@@ -1,24 +1,21 @@
-import { useUsers } from '@/hooks/use-users';
+'use client'
+
 import { formatDate } from '@/lib/utils';
 import { useDropDownStore } from '@/store';
 import { GameType } from '@/types/game';
 import { UserType } from '@/types/user';
 import { motion } from "framer-motion";
-import { Loading } from './Loading';
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
+import { FC } from 'react';
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
 
-export const Users = ({ }) => {
-    const { data: session } = useSession()
+interface UsersProps {
+    users: UserType[]
+}
 
-    if (!session?.user?.isAdmin) redirect('/')
-
+export const Users: FC<UsersProps> = ({ users }) => {
     const { dropDown } = useDropDownStore()
-
-    const { data: users, isLoading } = useUsers();
-
-    if (isLoading) return <Loading />
 
     return (
         <motion.div
