@@ -42,7 +42,8 @@ export const SignIn = ({ }) => {
                     variant: 'destructive'
                 })
             }
-            router.push(status?.url || '/')
+            // router.push(status?.url || '/')
+            document.location.href = status?.url || '/'
         } catch (error) {
             toast({
                 title: 'Something went wrong',
