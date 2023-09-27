@@ -1,7 +1,8 @@
 import { LevelType } from "./level";
 
 export type GameType = {
-    id?: number;
+    id?: string;
+    userId?: string;
     score: number;
     level: LevelType | string;
     questionsLength?: number | undefined;

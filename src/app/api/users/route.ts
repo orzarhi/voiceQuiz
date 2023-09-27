@@ -13,6 +13,7 @@ export async function GET() {
                 game: {
                     select: {
                         id: true,
+                        userId: true,
                         score: true,
                         level: true,
                         questionsLength: true,

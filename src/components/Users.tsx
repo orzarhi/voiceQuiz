@@ -5,22 +5,20 @@ import { useDropDownStore } from '@/store';
 import { GameType } from '@/types/game';
 import { UserType } from '@/types/user';
 import { motion } from "framer-motion";
-
 import { FC } from 'react';
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from './ui/Table';
-import { useUsers } from '@/hooks/use-users';
-import { Loading } from './Loading';
 
 interface UsersProps {
-    // users: UserType[]
+    users: UserType[]
 }
 
-export const Users: FC<UsersProps> = ({ }) => {
+export const Users: FC<UsersProps> = ({ users }) => {
     const { dropDown } = useDropDownStore()
 
-    const { data: users, isLoading } = useUsers()
+    // const { data: users, isFetched, isFetching } = useUsers()
 
-    if (isLoading) return <Loading />
+    // if userId equals to user.id then show the game
+
 
     return (
         <motion.div
@@ -43,7 +41,7 @@ export const Users: FC<UsersProps> = ({ }) => {
                         <TableHead>CreatedAt</TableHead>
                         <TableHead>Admin</TableHead>
                         <TableHead>Attempts</TableHead>
-                        <TableHead>Level</TableHead>
+                        {/* <TableHead>Level</TableHead> */}
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -55,7 +53,7 @@ export const Users: FC<UsersProps> = ({ }) => {
                             <TableCell>{formatDate(user.createdAt)}</TableCell>
                             <TableCell>{user.isAdmin ? "✅" : "❌"}</TableCell>
                             <TableCell>{user?.game.length}</TableCell>
-                            {user?.game.map((game: GameType, index: number) => (
+                            {/* {user.game.map((game: GameType, index: number) => (
                                 <TableRow key={game.id}>
                                     <TableCell className='text-xs'>
                                         {index + 1}. {game.level}
@@ -67,7 +65,7 @@ export const Users: FC<UsersProps> = ({ }) => {
                                         {formatDate(game.date)}
                                     </TableCell>
                                 </TableRow>
-                            ))}
+                            ))} */}
                         </TableRow>
                     ))}
                 </TableBody>

@@ -17,8 +17,8 @@ export default async function page({ }) {
     const session = await getAuthSession();
     if (!session?.user.isAdmin) redirect('/');
 
-    // const users = await getData()
+    const users = await getData()
 
-    return <Users />
+    return <Users users={users} />
 }
 
