@@ -7,9 +7,7 @@ import { redirect } from "next/navigation";
 const getData = async () => {
     const { url } = domainConfig
     return (await fetch(`${url}/api/users`, {
-        next: {
-            revalidate: REVALIDATE
-        }
+        cache: 'no-store'
     })).json()
 }
 
@@ -18,7 +16,6 @@ export default async function page({ }) {
     if (!session?.user.isAdmin) redirect('/');
 
     const users = await getData()
-    console.log("🚀 users:", users)
 
     return <Users users={users} />
 }
