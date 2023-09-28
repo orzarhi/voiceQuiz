@@ -1,8 +1,13 @@
 import { db } from "@/lib/db";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
     try {
+        const path = req.nextUrl.searchParams.get("path") || '/api/users';
+
+        revalidatePath(path);
+
         const users = await db.user.findMany({
             select: {
                 name: true,
