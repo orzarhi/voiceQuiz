@@ -14,18 +14,6 @@ export default async function page({ }) {
     const response = await fetch(`${url}/api/users`, { cache: 'no-store' })
     const users: UserType[] = await response.json()
 
-    // return <Users users={users} />
-    return (
-        <>
-            {users.map((user, index: number) => (
-                <div key={user.id}>
-                    <h1>{index + 1}. {user.name}</h1>
-                    <p>{user.email}</p>
-                    <p>{new Date().toLocaleTimeString()}</p>
-                    <hr />
-                </div>
-            ))}
-        </>
-    )
+    return <Users users={users} />
 }
 
