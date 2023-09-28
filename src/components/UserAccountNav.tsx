@@ -76,7 +76,7 @@ export const UserAccountNav: FC<UserAccountNavProps> = ({ user }) => {
             </DropdownMenuItem>
 
             <DropdownMenuItem asChild className='drop-down-menu dark:hover:bg-zinc-700'>
-              <a href='users'>Users</a>
+              <Link href='users'>Users</Link>
             </DropdownMenuItem>
           </> : null
         }
