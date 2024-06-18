@@ -1,4 +1,4 @@
-import { EasyQuestions, HardQuestions, MediumQuestions } from '@/constants/questions';
+import { EasyQuestions, HardQuestions, MediumQuestions, AnimalsQuestions, ColorsQuestions } from '@/constants/questions';
 import { QuestionType } from '@/types/question';
 import { ClassValue, clsx } from 'clsx';
 import { format } from 'date-fns';
@@ -28,9 +28,18 @@ export const formatDate = (date: Date, newFormat?: string) => {
 
 const randomQuestions = (questions: QuestionType[]) => questions.sort(() => Math.random() - 0.5)
 
-export const randomAllQuestions = () => {
-  randomQuestions(EasyQuestions)
-  randomQuestions(MediumQuestions)
-  randomQuestions(HardQuestions)
+export const randomAllQuestions = (level: string) => {
+  if (level === 'Easy') {
+    randomQuestions(EasyQuestions)
+  } else if (level === 'Medium') {
+    randomQuestions(MediumQuestions)
+  } else if (level === 'Hard') {
+    randomQuestions(HardQuestions)
+  } else if (level === 'Animals') {
+    randomQuestions(AnimalsQuestions)
+  } else if (level === 'Colors') {
+    randomQuestions(ColorsQuestions)
+  }
+
 }
 

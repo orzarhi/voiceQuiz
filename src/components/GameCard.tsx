@@ -31,7 +31,9 @@ export const GameCard: FC<GameCardProps> = () => {
         selectedAnswer: null
     });
 
-    useEffect(() => { setLevel('Easy'); }, []);
+    useEffect(() => {
+        if (!level) setLevel('Easy')
+    }, []);
 
     useEffect(() => {
         handleNewGame();
@@ -59,7 +61,7 @@ export const GameCard: FC<GameCardProps> = () => {
         if (isCorrect) new Audio("/audio/correct.mp3").play();
         else new Audio("/audio/incorrect.mp3").play();
 
-        await delay(1000);
+        await delay(1500);
 
         setGame(prevGame => {
             const nextQuestion = prevGame.currentQuestion + 1;
@@ -91,7 +93,7 @@ export const GameCard: FC<GameCardProps> = () => {
     };
 
     const handleNewGame = () => {
-        randomAllQuestions();
+        randomAllQuestions(level);
         setGame(prevGame => ({
             ...prevGame,
             currentQuestion: 0,
@@ -140,7 +142,7 @@ export const GameCard: FC<GameCardProps> = () => {
                             {questions.length && questions[game.currentQuestion]?.answerOptions.map((answerOption: AnswerType, index: number) => (
                                 <div key={index} className='w-full'>
                                     <Button
-                                        className={`w-full ${game.changeBackground && answerOption.isCorrect ? 'bg-green-500' :
+                                        className={`w-full ring-0 focus:ring-0 ${game.changeBackground && answerOption.isCorrect ? 'bg-green-500' :
                                             game.changeBackground && game.selectedAnswer === index && !answerOption.isCorrect ? 'bg-red-500' : ''
                                             }`}
                                         variant='outline'
