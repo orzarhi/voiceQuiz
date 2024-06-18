@@ -786,16 +786,16 @@ export const AnimalsQuestions = [
     {
         questionText: "Lion",
         answerOptions: [
-            { answerText: "כפיר", isCorrect: true },
+            { answerText: "כפיר", isCorrect: false },
             { answerText: "נמר", isCorrect: false },
             { answerText: "זברה", isCorrect: false },
-            { answerText: "אריה", isCorrect: false },
+            { answerText: "אריה", isCorrect: true },
         ],
     },
     {
         questionText: "Tiger",
         answerOptions: [
-            { answerText: "כפיר", isCorrect: false },
+            { answerText: "עז", isCorrect: false },
             { answerText: "נמר", isCorrect: true },
             { answerText: "זברה", isCorrect: false },
             { answerText: "אריה", isCorrect: false },
@@ -834,6 +834,7 @@ export const AnimalsQuestions = [
             { answerText: "קנגרו", isCorrect: true },
             { answerText: "קואלה", isCorrect: false },
             { answerText: "קואלה", isCorrect: false },
+            { answerText: "זבוב", isCorrect: false },
         ]
     }
 ]
