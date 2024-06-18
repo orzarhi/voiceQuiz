@@ -986,3 +986,187 @@ export const ColorsQuestions = [
     }
 
 ]
+
+export const FruitsAndVegetablesQuestions = [
+    {
+        questionText: "Apple",
+        answerOptions: [
+            { answerText: "בננה", isCorrect: false },
+            { answerText: "ענב", isCorrect: false },
+            { answerText: "אבטיח", isCorrect: false },
+            { answerText: "תפוח", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Banana",
+        answerOptions: [
+            { answerText: "תפוח", isCorrect: false },
+            { answerText: "חסה", isCorrect: true },
+            { answerText: "בננה", isCorrect: true },
+            { answerText: "אפרסק", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Carrot",
+        answerOptions: [
+            { answerText: "כרובית", isCorrect: false },
+            { answerText: "קישוא", isCorrect: false },
+            { answerText: "חסה", isCorrect: false },
+            { answerText: "גזר", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Tomato",
+        answerOptions: [
+            { answerText: "עגבניה", isCorrect: true },
+            { answerText: "מלפפון", isCorrect: false },
+            { answerText: "פלפל", isCorrect: false },
+            { answerText: "בצל", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Grape",
+        answerOptions: [
+            { answerText: "תפוח", isCorrect: false },
+            { answerText: "אפרסק", isCorrect: false },
+            { answerText: "ענב", isCorrect: true },
+            { answerText: "בננה", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Lettuce",
+        answerOptions: [
+            { answerText: "כרובית", isCorrect: false },
+            { answerText: "ברוקולי", isCorrect: false },
+            { answerText: "תרד", isCorrect: false },
+            { answerText: "חסה", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Cucumber",
+        answerOptions: [
+            { answerText: "קישוא", isCorrect: false },
+            { answerText: "עגבניה", isCorrect: false },
+            { answerText: "חציל", isCorrect: false },
+            { answerText: "מלפפון", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Peach",
+        answerOptions: [
+            { answerText: "תפוח", isCorrect: false },
+            { answerText: "בננה", isCorrect: false },
+            { answerText: "אפרסק", isCorrect: true },
+            { answerText: "אבטיח", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Watermelon",
+        answerOptions: [
+            { answerText: "אבטיח", isCorrect: true },
+            { answerText: "מלון", isCorrect: false },
+            { answerText: "אפרסק", isCorrect: false },
+            { answerText: "תפוז", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Strawberry",
+        answerOptions: [
+            { answerText: "דובדבן", isCorrect: false },
+            { answerText: "ענב", isCorrect: false },
+            { answerText: "רימון", isCorrect: false },
+            { answerText: "תות", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Orange",
+        answerOptions: [
+            { answerText: "קלמנטינה", isCorrect: false },
+            { answerText: "לימון", isCorrect: false },
+            { answerText: "אשכולית", isCorrect: false },
+            { answerText: "תפוז", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Onion",
+        answerOptions: [
+            { answerText: "בצל", isCorrect: true },
+            { answerText: "שום", isCorrect: false },
+            { answerText: "גזר", isCorrect: false },
+            { answerText: "תפוח אדמה", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Garlic",
+        answerOptions: [
+            { answerText: "בצל", isCorrect: false },
+            { answerText: "גזר", isCorrect: false },
+            { answerText: "תפוח אדמה", isCorrect: false },
+            { answerText: "שום", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Potato",
+        answerOptions: [
+            { answerText: "בטטה", isCorrect: false },
+            { answerText: "תפוח אדמה", isCorrect: true },
+            { answerText: "קולורבי", isCorrect: false },
+            { answerText: "סלק", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Broccoli",
+        answerOptions: [
+            { answerText: "כרוב", isCorrect: false },
+            { answerText: "כרובית", isCorrect: false },
+            { answerText: "ברוקולי", isCorrect: true },
+            { answerText: "תרד", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Pepper",
+        answerOptions: [
+            { answerText: "מלפפון", isCorrect: false },
+            { answerText: "עגבניה", isCorrect: false },
+            { answerText: "פלפל", isCorrect: true },
+            { answerText: "בצל", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Cherry",
+        answerOptions: [
+            { answerText: "דובדבן", isCorrect: true },
+            { answerText: "תות", isCorrect: false },
+            { answerText: "ענב", isCorrect: false },
+            { answerText: "רימון", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Mango",
+        answerOptions: [
+            { answerText: "אפרסק", isCorrect: false },
+            { answerText: "מנגו", isCorrect: true },
+            { answerText: "תפוח", isCorrect: false },
+            { answerText: "בננה", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Pineapple",
+        answerOptions: [
+            { answerText: "אפרסק", isCorrect: false },
+            { answerText: "תפוז", isCorrect: false },
+            { answerText: "אננס", isCorrect: true },
+            { answerText: "לימון", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Lemon",
+        answerOptions: [
+            { answerText: "תפוז", isCorrect: false },
+            { answerText: "אשכולית", isCorrect: false },
+            { answerText: "לימון", isCorrect: true },
+            { answerText: "קלמנטינה", isCorrect: false },
+        ]
+    }
+
+]

@@ -1,4 +1,4 @@
-import { EasyQuestions, HardQuestions, MediumQuestions, AnimalsQuestions, ColorsQuestions } from '@/constants/questions';
+import { EasyQuestions, HardQuestions, MediumQuestions, AnimalsQuestions, ColorsQuestions, FruitsAndVegetablesQuestions } from '@/constants/questions';
 import { QuestionType } from '@/types/question';
 import { ClassValue, clsx } from 'clsx';
 import { format } from 'date-fns';
@@ -39,6 +39,8 @@ export const randomAllQuestions = (level: string) => {
     randomQuestions(AnimalsQuestions)
   } else if (level === 'Colors') {
     randomQuestions(ColorsQuestions)
+  } else if (level === 'FruitsAndVegetables') {
+    randomQuestions(FruitsAndVegetablesQuestions)
   }
 
 }

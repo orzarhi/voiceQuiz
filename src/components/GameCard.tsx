@@ -2,7 +2,7 @@
 
 import { Loading } from '@/components/Loading'
 import { useGame } from '@/hooks/use-game'
-import { EasyQuestions, MediumQuestions, HardQuestions, AnimalsQuestions, ColorsQuestions } from '@/constants/questions'
+import { EasyQuestions, MediumQuestions, HardQuestions, AnimalsQuestions, ColorsQuestions, FruitsAndVegetablesQuestions } from '@/constants/questions'
 import { delay, randomAllQuestions, textToSpeech } from '@/lib/utils'
 import { GameRequest } from '@/lib/validators/game'
 import { useDropDownStore, useLevelStore } from '@/store'
@@ -47,6 +47,8 @@ export const GameCard: FC<GameCardProps> = () => {
             setQuestions(AnimalsQuestions);
         } else if (level === 'Colors') {
             setQuestions(ColorsQuestions);
+        } else if (level === 'FruitsAndVegetables') {
+            setQuestions(FruitsAndVegetablesQuestions);
         }
     }, [level]);
 

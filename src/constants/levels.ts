@@ -7,4 +7,5 @@ export const RANDOM_QUESTIONS = [
 export const TOPICS = [
     { id: 'Animals', label: 'Animals 🐶' },
     { id: 'Colors', label: 'Colors 🌈' },
+    { id: 'FruitsAndVegetables', label: 'F&V 🍎' },
 ]
