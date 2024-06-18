@@ -557,3 +557,432 @@ export const HardQuestions = [
     },
 ];
 
+export const AnimalsQuestions = [
+    {
+        questionText: "Giraffe",
+        answerOptions: [
+            { answerText: "פיל", isCorrect: false },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "ג'ירפה", isCorrect: true },
+            { answerText: "אריה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Zebra",
+        answerOptions: [
+            { answerText: "עכבר", isCorrect: false },
+            { answerText: "פרפר", isCorrect: false },
+            { answerText: "זברה", isCorrect: true },
+            { answerText: "פיל", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Snake",
+        answerOptions: [
+            { answerText: "צב", isCorrect: false },
+            { answerText: "קוף", isCorrect: false },
+            { answerText: "נחש", isCorrect: true },
+            { answerText: "ג'ירפה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Turtle",
+        answerOptions: [
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "צב", isCorrect: true },
+            { answerText: "נחש", isCorrect: false },
+            { answerText: "קוף", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Monkey",
+        answerOptions: [
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "נמר", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+            { answerText: "קוף", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Bear",
+        answerOptions: [
+            { answerText: "פיל", isCorrect: false },
+            { answerText: "דב", isCorrect: true },
+            { answerText: "קוף", isCorrect: false },
+            { answerText: "זברה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Rabbit",
+        answerOptions: [
+            { answerText: "צב", isCorrect: false },
+            { answerText: "דב", isCorrect: false },
+            { answerText: "ארנב", isCorrect: true },
+            { answerText: "פיל", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Deer",
+        answerOptions: [
+            { answerText: "אייל", isCorrect: true },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "קוף", isCorrect: false },
+            { answerText: "ג'ירפה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Fox",
+        answerOptions: [
+            { answerText: "שועל", isCorrect: true },
+            { answerText: "ארנב", isCorrect: false },
+            { answerText: "אייל", isCorrect: false },
+            { answerText: "צב", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Wolf",
+        answerOptions: [
+            { answerText: "זאב", isCorrect: true },
+            { answerText: "חתול", isCorrect: false },
+            { answerText: "ארנב", isCorrect: false },
+            { answerText: "אייל", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Horse",
+        answerOptions: [
+            { answerText: "עטלף", isCorrect: false },
+            { answerText: "שועל", isCorrect: false },
+            { answerText: "ארנב", isCorrect: false },
+            { answerText: "סוס", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Cow",
+        answerOptions: [
+            { answerText: "כלבלב", isCorrect: false },
+            { answerText: "פרה", isCorrect: true },
+            { answerText: "זאב", isCorrect: false },
+            { answerText: "שועל", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Pig",
+        answerOptions: [
+            { answerText: "פרה", isCorrect: false },
+            { answerText: "סוס", isCorrect: false },
+            { answerText: "חזיר", isCorrect: true },
+            { answerText: "זאב", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Sheep",
+        answerOptions: [
+            { answerText: "חזיר", isCorrect: false },
+            { answerText: "פרה", isCorrect: false },
+            { answerText: "כבש", isCorrect: true },
+            { answerText: "סוס", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Goat",
+        answerOptions: [
+            { answerText: "כבש", isCorrect: false },
+            { answerText: "חזיר", isCorrect: false },
+            { answerText: "פרה", isCorrect: false },
+            { answerText: "עז", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Chicken",
+        answerOptions: [
+            { answerText: "עז", isCorrect: false },
+            { answerText: "כבש", isCorrect: false },
+            { answerText: "חזיר", isCorrect: false },
+            { answerText: "תרנגולת", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Duck",
+        answerOptions: [
+            { answerText: "תרנגולת", isCorrect: false },
+            { answerText: "עז", isCorrect: false },
+            { answerText: "ברווז", isCorrect: true },
+            { answerText: "כבש", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Frog",
+        answerOptions: [
+            { answerText: "אווז", isCorrect: false },
+            { answerText: "צפרדע", isCorrect: true },
+            { answerText: "ברווז", isCorrect: false },
+            { answerText: "תרנגולת", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Fish",
+        answerOptions: [
+            { answerText: "צפרדע", isCorrect: false },
+            { answerText: "אווז", isCorrect: false },
+            { answerText: "ברווז", isCorrect: false },
+            { answerText: "דג", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Shark",
+        answerOptions: [
+            { answerText: "דג", isCorrect: false },
+            { answerText: "צפרדע", isCorrect: false },
+            { answerText: "כריש", isCorrect: true },
+            { answerText: "אווז", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Goose",
+        answerOptions: [
+            { answerText: "אווז", isCorrect: true },
+            { answerText: "ברווז", isCorrect: false },
+            { answerText: "תרנגולת", isCorrect: false },
+            { answerText: "עז", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Dolphin",
+        answerOptions: [
+            { answerText: "דולפין", isCorrect: true },
+            { answerText: "כריש", isCorrect: false },
+            { answerText: "דג", isCorrect: false },
+            { answerText: "צפרדע", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Whale",
+        answerOptions: [
+            { answerText: "דולפין", isCorrect: false },
+            { answerText: "כריש", isCorrect: false },
+            { answerText: "לווייתן", isCorrect: true },
+            { answerText: "דג", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Octopus",
+        answerOptions: [
+            { answerText: "לווייתן", isCorrect: false },
+            { answerText: "דולפין", isCorrect: false },
+            { answerText: "תמנון", isCorrect: true },
+            { answerText: "כריש", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Crab",
+        answerOptions: [
+            { answerText: "תמנון", isCorrect: false },
+            { answerText: "סרטן", isCorrect: true },
+            { answerText: "לווייתן", isCorrect: false },
+            { answerText: "דולפין", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Lion",
+        answerOptions: [
+            { answerText: "כפיר", isCorrect: true },
+            { answerText: "נמר", isCorrect: false },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Tiger",
+        answerOptions: [
+            { answerText: "כפיר", isCorrect: false },
+            { answerText: "נמר", isCorrect: true },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Elephant",
+        answerOptions: [
+            { answerText: "פיל", isCorrect: true },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+            { answerText: "כפיר", isCorrect: false },
+        ],
+    },
+    {
+        questionText: "Hippopotamus",
+        answerOptions: [
+            { answerText: "פיל", isCorrect: false },
+            { answerText: "זברה", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+            { answerText: "היפופוטמוס", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Rhino",
+        answerOptions: [
+            { answerText: "פיל", isCorrect: false },
+            { answerText: "אריה", isCorrect: false },
+            { answerText: "כפיר", isCorrect: false },
+            { answerText: "רינוקרוס", isCorrect: true },
+        ],
+    },
+    {
+        questionText: "Kangaroo",
+        answerOptions: [
+            { answerText: "קנגרו", isCorrect: true },
+            { answerText: "קואלה", isCorrect: false },
+            { answerText: "קואלה", isCorrect: false },
+        ]
+    }
+]
+
+export const ColorsQuestions = [
+    {
+        questionText: "Red",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: true },
+            { answerText: "צהוב", isCorrect: false },
+
+        ]
+    },
+    {
+        questionText: "Blue",
+        answerOptions: [
+            { answerText: "אדום", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "כחול", isCorrect: true },
+            { answerText: "צהוב", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Green",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+            { answerText: "ירוק", isCorrect: true },
+            { answerText: "צהוב", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Yellow",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+            { answerText: "צהוב", isCorrect: true },
+        ]
+    },
+    {
+        questionText: "Purple",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "סגול", isCorrect: true },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Orange",
+        answerOptions: [
+            { answerText: "כתום", isCorrect: true },
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Brown",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "חום", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Pink",
+        answerOptions: [
+            { answerText: "ורוד", isCorrect: true },
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Black",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "שחור", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "White",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "לבן", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Grey",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "אפור", isCorrect: true },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Gold",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "זהב", isCorrect: true },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Silver",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "כסף", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Turquoise",
+        answerOptions: [
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "טורקיז", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Maroon",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "מרון", isCorrect: true },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    },
+    {
+        questionText: "Beige",
+        answerOptions: [
+            { answerText: "כחול", isCorrect: false },
+            { answerText: "ירוק", isCorrect: false },
+            { answerText: "בז'", isCorrect: true },
+            { answerText: "אדום", isCorrect: false },
+        ]
+    }
+
+]

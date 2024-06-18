@@ -14,5 +14,6 @@ export type CurrentGameType = {
     score: number,
     endGame: boolean,
     changeBackground: boolean,
+    selectedAnswer: number | null
 }
 
