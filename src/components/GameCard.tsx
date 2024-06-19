@@ -1,8 +1,8 @@
 'use client'
 
 import { Loading } from '@/components/Loading'
+import { questionSets } from '@/config/questionSets'
 import { useGame } from '@/hooks/use-game'
-import { EasyQuestions, MediumQuestions, HardQuestions, AnimalsQuestions, ColorsQuestions, FruitsAndVegetablesQuestions } from '@/constants/questions'
 import { delay, randomAllQuestions, textToSpeech } from '@/lib/utils'
 import { GameRequest } from '@/lib/validators/game'
 import { useDropDownStore, useLevelStore } from '@/store'
@@ -37,22 +37,16 @@ export const GameCard: FC<GameCardProps> = () => {
 
     useEffect(() => {
         handleNewGame();
-        if (level === 'Easy') {
-            setQuestions(EasyQuestions);
-        } else if (level === 'Medium') {
-            setQuestions(MediumQuestions);
-        } else if (level === 'Hard') {
-            setQuestions(HardQuestions);
-        } else if (level === 'Animals') {
-            setQuestions(AnimalsQuestions);
-        } else if (level === 'Colors') {
-            setQuestions(ColorsQuestions);
-        } else if (level === 'FruitsAndVegetables') {
-            setQuestions(FruitsAndVegetablesQuestions);
+        const questions = questionSets[level];
+        if (questions) {
+            setQuestions(questions);
         }
     }, [level]);
 
     const handleAnswerClick = async (isCorrect: boolean, index: number) => {
+        if (isCorrect) new Audio("/audio/correct.mp3").play();
+        else new Audio("/audio/incorrect.mp3").play();
+
         setGame(prevGame => ({
             ...prevGame,
             changeBackground: true,
@@ -60,8 +54,7 @@ export const GameCard: FC<GameCardProps> = () => {
             score: isCorrect ? prevGame.score + 1 : prevGame.score
         }));
 
-        if (isCorrect) new Audio("/audio/correct.mp3").play();
-        else new Audio("/audio/incorrect.mp3").play();
+
 
         await delay(1500);
 

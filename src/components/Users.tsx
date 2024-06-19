@@ -2,7 +2,6 @@
 
 import { formatDate } from '@/lib/utils';
 import { useDropDownStore } from '@/store';
-import { GameType } from '@/types/game';
 import { UserType } from '@/types/user';
 import { motion } from "framer-motion";
 import { FC } from 'react';
